@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const MIN_DISPLAY_MS = 600;
+const MIN_DISPLAY_MS = 400;
 const FADE_MS = 400;
 
 export default function Loader() {
@@ -10,23 +10,15 @@ export default function Loader() {
   const [fading, setFading] = useState(false);
 
   useEffect(() => {
-    const start = Date.now();
+    // Content is statically pre-rendered, so there's no need to wait on
+    // window "load" — that event waits for every resource on the page
+    // (hero video, images, fonts) and can hold this overlay up for seconds.
+    const timer = setTimeout(() => {
+      setFading(true);
+      setTimeout(() => setVisible(false), FADE_MS);
+    }, MIN_DISPLAY_MS);
 
-    const hide = () => {
-      const remaining = Math.max(MIN_DISPLAY_MS - (Date.now() - start), 0);
-      setTimeout(() => {
-        setFading(true);
-        setTimeout(() => setVisible(false), FADE_MS);
-      }, remaining);
-    };
-
-    if (document.readyState === "complete") {
-      hide();
-      return;
-    }
-
-    window.addEventListener("load", hide);
-    return () => window.removeEventListener("load", hide);
+    return () => clearTimeout(timer);
   }, []);
 
   if (!visible) return null;

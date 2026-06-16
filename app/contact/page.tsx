@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import PartnersStrip from "@/components/sections/PartnersStrip";
+import ContactForm from "@/components/sections/ContactForm";
 import { clubInfo } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -499,96 +500,7 @@ export default function ContactPage() {
 
           {/* Right — contact form */}
           <ScrollReveal direction="right" duration={0.9} delay={0.1}>
-            <form action="#" method="POST">
-              {/* Name */}
-              <div>
-                <label htmlFor="contact-name" className="contact-label">
-                  Name
-                </label>
-                <input
-                  id="contact-name"
-                  name="name"
-                  type="text"
-                  className="contact-input"
-                  placeholder="Your full name"
-                  autoComplete="name"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label htmlFor="contact-email" className="contact-label">
-                  Email
-                </label>
-                <input
-                  id="contact-email"
-                  name="email"
-                  type="email"
-                  className="contact-input"
-                  placeholder="your@email.com"
-                  autoComplete="email"
-                />
-              </div>
-
-              {/* Subject */}
-              <div>
-                <label htmlFor="contact-subject" className="contact-label">
-                  Subject
-                </label>
-                <select id="contact-subject" name="subject" className="contact-input" defaultValue="">
-                  <option value="" disabled>Select a subject</option>
-                  <option value="general">General Inquiry</option>
-                  <option value="sponsorship">Sponsorship &amp; Partnership</option>
-                  <option value="membership">Membership Question</option>
-                  <option value="media">Media &amp; Press</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              {/* Message */}
-              <div>
-                <label htmlFor="contact-message" className="contact-label">
-                  Message
-                </label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  rows={5}
-                  className="contact-input"
-                  placeholder="How can we help you?"
-                />
-              </div>
-
-              {/* Submit */}
-              <button type="submit" className="contact-submit">
-                Send Message
-              </button>
-
-              <p
-                style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.8rem",
-                  color: "rgba(240,240,240,0.35)",
-                  textAlign: "center",
-                  marginTop: "12px",
-                }}
-              >
-                We&apos;ll respond within 48 hours
-              </p>
-
-              <p
-                style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.75rem",
-                  color: "rgba(245,200,66,0.5)",
-                  textAlign: "center",
-                  marginTop: "8px",
-                  fontStyle: "italic",
-                }}
-              >
-                Form submission coming soon
-              </p>
-            </form>
+            <ContactForm />
           </ScrollReveal>
 
         </div>

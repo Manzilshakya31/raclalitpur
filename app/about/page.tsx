@@ -125,21 +125,72 @@ const boardMembers = [
     initials: "MS",
     profileUrl: "https://www.instagram.com/manzil_shakya/",
   },
-  { name: "[VP Name]", role: "Vice President", initials: "VP" },
-  { name: "[Secretary Name]", role: "Secretary", initials: "SN" },
-  { name: "[Treasurer Name]", role: "Treasurer", initials: "TN" },
-  { name: "[SAA Name]", role: "Sergeant at Arms", initials: "SA" },
-  { name: "[Director Name]", role: "Director of Service", initials: "DS" },
+  { name: "Rtr. Mabika Maharjan", role: "Secretary", initials: "MM" },
+  { name: "Rtr. Shilviya Bajracharya", role: "Treasurer", initials: "SB" },
+  {
+    name: "Rtr. Mihika Maharjan",
+    role: "International Service Director",
+    initials: "MM",
+  },
+  {
+    name: "Rtr. Ananda Bakhrel",
+    role: "Professional Director",
+    initials: "AB",
+  },
+  { name: "Rtr. Alwina Shakya", role: "Club Service Director", initials: "AS" },
+  { name: "Rtr. Samir Shakya", role: "Membership Director", initials: "SS" },
+  {
+    name: "Rtr. Richa Bist",
+    role: "Community Service Director",
+    initials: "RB",
+  },
+  { name: "Rtr. Jessica Rai", role: "Sergeant at Arms", initials: "JR" },
+  { name: "Rtr. Prashamshya M. Karmacharya", role: "", initials: "PMK" },
+  { name: "Rtr. Shubhasika Tamrakar", role: "", initials: "ST" },
+];
+
+const generalMembers = [
+  "Suzal Tamrakar",
+  "Manya Rajkarnikar",
+  "Sandip Rai",
+  "Swostika Rai",
+  "Pragalv Raj Shakya",
+  "Bhaskar Pant",
+  "Ezna Barahi",
+  "Sargah Maharjan",
 ];
 
 const pastPresidentNames: Record<number, string> = {
   1: "Sanju Shakya",
   2: "Gopal K. Shrestha",
   3: "Govinda Awale",
+  4: "Rajesh Bajracharya",
+  5: "Sanju Shakya",
+  6: "Gajanana Dakhwa",
+  7: "Biseshwor Man Shrestha",
+  8: "Sajesh Tamrakar",
+  9: "Nitisha Tamrakar",
+  10: "Sugen Shakya",
+  11: "Rujan Bajracharya",
+  12: "Prakash R. Bajracharya",
+  13: "Roshan Bajracharya",
+  14: "Jitendra Bajracharya",
+  15: "Alisha Shakya",
+  16: "Bijay Benjankar",
+  17: "Prabin Maharjan",
+  18: "Sanjal Byanjankar",
+  19: "Rashik Shakya",
+  20: "Priyanka Shakya",
+  21: "Sama Shrestha",
+  22: "Nischal Tamrakar",
+  23: "Rubin Bajracharya",
+  24: "Pranil Shakya",
+  25: "Shovana Shakya",
+  26: "Manjil Shakya",
 };
 
 const pastPresidents = Array.from(
-  { length: 25 },
+  { length: 26 },
   (_, i) => pastPresidentNames[i + 1] ?? `President ${i + 1}`,
 );
 
@@ -681,8 +732,95 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── SECTION 5 — PAST PRESIDENTS ───────────────────────────── */}
+      {/* ── SECTION 5 — GENERAL MEMBERS ───────────────────────────── */}
       <section style={{ background: "#111111", padding: "80px 8%" }}>
+        <ScrollReveal>
+          <div style={{ textAlign: "center", marginBottom: "48px" }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "16px",
+                marginBottom: "16px",
+              }}
+            >
+              <div
+                style={{ width: "40px", height: "1px", background: "#f5c842" }}
+              />
+              <span
+                style={{
+                  fontSize: "0.75rem",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "#f5c842",
+                  fontFamily: "var(--font-body)",
+                }}
+              >
+                OUR MEMBERS
+              </span>
+              <div
+                style={{ width: "40px", height: "1px", background: "#f5c842" }}
+              />
+            </div>
+            <h2
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                fontWeight: 300,
+                color: "white",
+                lineHeight: 1.1,
+                marginBottom: "12px",
+              }}
+            >
+              General Members
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "0.9rem",
+                color: "rgba(240,240,240,0.45)",
+              }}
+            >
+              The members who power every project
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.1}>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "10px",
+              justifyContent: "center",
+              maxWidth: "900px",
+              margin: "0 auto",
+            }}
+          >
+            {generalMembers.map((name) => (
+              <span
+                key={name}
+                style={{
+                  background: "rgba(255,255,255,0.03)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  borderRadius: "999px",
+                  padding: "8px 20px",
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.85rem",
+                  color: "rgba(240,240,240,0.6)",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {name}
+              </span>
+            ))}
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* ── SECTION 6 — PAST PRESIDENTS ───────────────────────────── */}
+      <section style={{ background: "#0a0a0a", padding: "80px 8%" }}>
         <ScrollReveal>
           <div style={{ textAlign: "center", marginBottom: "48px" }}>
             <div
@@ -722,7 +860,7 @@ export default function AboutPage() {
                 marginBottom: "12px",
               }}
             >
-              25 Past Presidents
+              25+ Past Presidents
             </h2>
             <p
               style={{
@@ -747,9 +885,9 @@ export default function AboutPage() {
               margin: "0 auto",
             }}
           >
-            {pastPresidents.map((name) => (
+            {pastPresidents.map((name, i) => (
               <span
-                key={name}
+                key={`${name}-${i}`}
                 style={{
                   background: "rgba(255,255,255,0.03)",
                   border: "1px solid rgba(255,255,255,0.08)",
@@ -768,7 +906,7 @@ export default function AboutPage() {
         </ScrollReveal>
       </section>
 
-      {/* ── SECTION 6 — BOTTOM CTA ────────────────────────────────── */}
+      {/* ── SECTION 7 — BOTTOM CTA ────────────────────────────────── */}
       <section
         style={{
           background:

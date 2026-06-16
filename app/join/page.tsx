@@ -610,9 +610,7 @@ export default function JoinPage() {
             Ready to join<span style={{ color: "#d4006a" }}>?</span>
           </h2>
           <Link
-            href="https://forms.gle"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             style={{
               display: "inline-flex",
               alignItems: "center",

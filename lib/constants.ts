@@ -10,7 +10,7 @@ export const clubInfo = {
   email: "lallitpur@rotract3292.org",
   phone: "+977-9818706474",
   instagram: "https://instagram.com/raclalitpur",
-  facebook: "https://facebook.com/RotaractClubOfLalitpur",
+  facebook: "https://www.facebook.com/profile.php?id=61553319271054",
   membershipFee: "NPR 500",
   ageRange: "18+ Years",
   meetingSchedule: "Every alternate Saturday",
@@ -23,7 +23,7 @@ export const navLinks = [
   { label: "Projects", href: "/projects" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
-  { label: "Join", href: "/join" },
+  // { label: "Join", href: "/join" },
 ];
 
 export const partners = [

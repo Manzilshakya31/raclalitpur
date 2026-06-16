@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "@/lib/gsap";
 
@@ -31,14 +30,16 @@ export default function Hero() {
       className="relative overflow-hidden"
       style={{ minHeight: "100vh", display: "flex", alignItems: "center", paddingTop: "64px" }}
     >
-      {/* Background image */}
-      <Image
-        src="/images/background.png"
-        alt=""
-        fill
-        priority
-        style={{ objectFit: "cover", objectPosition: "center" }}
+      {/* Background video */}
+      <video
+        src="/images/herosection.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
         aria-hidden="true"
+        className="absolute inset-0 w-full h-full"
+        style={{ objectFit: "cover", objectPosition: "center" }}
       />
 
       {/* Overlay 1: solid dark over entire image */}

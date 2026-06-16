@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks, clubInfo } from "@/lib/constants";
@@ -53,10 +54,12 @@ export default function Navbar() {
                 RAC Lalitpur
               </span>
             ) : (
-              /* eslint-disable-next-line @next/next/no-img-element */
-              <img
-                src="/images/logo.svg"
+              <Image
+                src="/images/logo.png"
                 alt="Rotaract Club of Lalitpur"
+                width={270}
+                height={78}
+                priority
                 className="h-9 md:h-11 w-auto"
                 onError={() => setLogoError(true)}
               />

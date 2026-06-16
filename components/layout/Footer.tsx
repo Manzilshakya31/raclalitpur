@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { clubInfo, navLinks } from "@/lib/constants";
 
@@ -29,10 +30,11 @@ export default function Footer() {
         {/* Brand */}
         <div className="flex flex-col gap-4">
           <Link href="/">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/logo.svg"
+            <Image
+              src="/images/logo.png"
               alt="Rotaract Club of Lalitpur"
+              width={270}
+              height={78}
               className="h-9 md:h-11 w-auto"
             />
           </Link>
