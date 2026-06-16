@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Image from 'next/image'
 import { projects } from '@/lib/constants'
 
 export default function SignatureProjects() {
@@ -96,6 +97,15 @@ export default function SignatureProjects() {
               onMouseLeave={e =>
                 (e.currentTarget.style.transform = 'scale(1)')}
             >
+              {/* Background image */}
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 767px) 75vw, 380px"
+              />
+
               {/* Bottom gradient overlay */}
               <div style={{
                 position: 'absolute', inset: 0,

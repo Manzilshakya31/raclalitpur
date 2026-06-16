@@ -1,29 +1,20 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "@/lib/gsap";
 
-const CameraIcon = () => (
-  <svg
-    width="48"
-    height="48"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    style={{ opacity: 0.15, color: "#ffffff" }}
-  >
-    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-    <circle cx="12" cy="13" r="4" />
-  </svg>
-);
+const peekImages = [
+  "/images/project/candle-walk.png",
+  "/images/project/nyano_maya.jpeg",
+  "/images/project/matya_health_camp.jpg",
+];
 
 const cellBase = {
   borderRadius: "8px",
   overflow: "hidden",
+  position: "relative" as const,
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -137,7 +128,7 @@ export default function GalleryPeek() {
           onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.03)")}
           onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
         >
-          <CameraIcon />
+          <Image src={peekImages[0]} alt="" fill style={{ objectFit: "cover" }} sizes="(max-width: 1023px) 50vw, 40vw" />
         </div>
 
         {/* Cell 2 — top middle */}
@@ -152,7 +143,7 @@ export default function GalleryPeek() {
           onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.03)")}
           onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
         >
-          <CameraIcon />
+          <Image src={peekImages[1]} alt="" fill style={{ objectFit: "cover" }} sizes="(max-width: 1023px) 50vw, 20vw" />
         </div>
 
         {/* Cell 3 — top right */}
@@ -167,7 +158,7 @@ export default function GalleryPeek() {
           onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.03)")}
           onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
         >
-          <CameraIcon />
+          <Image src={peekImages[2]} alt="" fill style={{ objectFit: "cover" }} sizes="(max-width: 1023px) 50vw, 20vw" />
         </div>
 
         {/* Cell 4 — View All */}

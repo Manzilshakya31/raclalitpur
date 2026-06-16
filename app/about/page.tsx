@@ -100,7 +100,8 @@ const values = [
 ];
 
 const boardMembers = [
-  { name: "[President Name]",  role: "President",          initials: "PN" },
+  { name: "Rtr. Aakriti Simkhada", role: "President",                initials: "AS" },
+  { name: "Rtr. Manjil Shakya",    role: "Immediate Past President", initials: "MS" },
   { name: "[VP Name]",         role: "Vice President",     initials: "VP" },
   { name: "[Secretary Name]",  role: "Secretary",          initials: "SN" },
   { name: "[Treasurer Name]",  role: "Treasurer",          initials: "TN" },
@@ -108,7 +109,16 @@ const boardMembers = [
   { name: "[Director Name]",   role: "Director of Service", initials: "DS" },
 ];
 
-const pastPresidents = Array.from({ length: 25 }, (_, i) => `President ${i + 1}`);
+const pastPresidentNames: Record<number, string> = {
+  1: "Sanju Shakya",
+  2: "Gopal K. Shrestha",
+  3: "Govinda Awale",
+};
+
+const pastPresidents = Array.from(
+  { length: 25 },
+  (_, i) => pastPresidentNames[i + 1] ?? `President ${i + 1}`
+);
 
 // ── Page ───────────────────────────────────────────────────────────────────
 

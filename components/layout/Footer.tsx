@@ -74,6 +74,12 @@ export default function Footer() {
             >
               {clubInfo.email}
             </a>
+            <a
+              href={`tel:${clubInfo.phone}`}
+              className="text-sm text-[var(--color-text-muted)] hover:text-primary transition-colors duration-200"
+            >
+              {clubInfo.phone}
+            </a>
           </div>
           <div className="flex items-center gap-4">
             <a

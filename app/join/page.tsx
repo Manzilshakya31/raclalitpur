@@ -474,7 +474,7 @@ export default function JoinPage() {
                   marginBottom: "4px",
                 }}
               >
-                Every [Day], [Time]
+                {clubInfo.meetingSchedule}
               </p>
               <p
                 style={{
@@ -484,7 +484,7 @@ export default function JoinPage() {
                   marginBottom: "28px",
                 }}
               >
-                Location: [Venue]
+                {clubInfo.meetingVenue}
               </p>
 
               <div
@@ -514,9 +514,23 @@ export default function JoinPage() {
                   fontSize: "0.9rem",
                   color: "#f5c842",
                   textDecoration: "none",
+                  display: "block",
+                  marginBottom: "4px",
                 }}
               >
                 {clubInfo.email}
+              </a>
+              <a
+                href={`tel:${clubInfo.phone}`}
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: "0.9rem",
+                  color: "#f5c842",
+                  textDecoration: "none",
+                  display: "block",
+                }}
+              >
+                {clubInfo.phone}
               </a>
             </div>
           </ScrollReveal>

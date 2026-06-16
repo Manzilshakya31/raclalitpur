@@ -8,10 +8,13 @@ export const clubInfo = {
   district: "RI District 3292",
   motto: "Perceive & Excel",
   email: "lallitpur@rotract3292.org",
+  phone: "+977-9818706474",
   instagram: "https://instagram.com/raclalitpur",
   facebook: "https://facebook.com/RotaractClubOfLalitpur",
   membershipFee: "NPR 500",
   ageRange: "18+ Years",
+  meetingSchedule: "Every alternate Saturday",
+  meetingVenue: "T&B Restaurant, Balkumari",
 };
 
 export const navLinks = [
@@ -39,7 +42,7 @@ export const projects = [
     category: "Cultural Preservation",
     description:
       "Annual cultural rally through Mongal Bazaar celebrating Lalitpur heritage. 3,000+ participants, community leaders, and media coverage.",
-    image: "/images/placeholder.svg",
+    image: "/images/project/candle-walk.png",
     featured: true,
   },
   {
@@ -48,7 +51,7 @@ export const projects = [
     category: "Community Outreach",
     description:
       "Warmth and care outreach project serving the community.",
-    image: "/images/placeholder.svg",
+    image: "/images/project/nyano_maya.jpeg",
     featured: true,
   },
   {
@@ -57,7 +60,7 @@ export const projects = [
     category: "Publication",
     description:
       "Club publication documenting stories, projects, and fellowship.",
-    image: "/images/placeholder.svg",
+    image: "/images/project/magazine.jpg",
     featured: true,
   },
   {
@@ -65,7 +68,7 @@ export const projects = [
     title: "Matya Health Camp",
     category: "Health Service",
     description: "Free community health camp providing medical services.",
-    image: "/images/placeholder.svg",
+    image: "/images/project/matya_health_camp.jpg",
     featured: true,
   },
 ];

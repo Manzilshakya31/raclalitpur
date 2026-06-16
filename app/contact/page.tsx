@@ -46,6 +46,23 @@ function LocationIcon() {
   );
 }
 
+function PhoneIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5c842" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
+function ClockIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5c842" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
+  );
+}
+
 // ── Page styles ─────────────────────────────────────────────────────────────
 
 const pageStyles = `
@@ -286,6 +303,36 @@ export default function ContactPage() {
               </div>
             </div>
 
+            {/* Phone */}
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "16px", marginBottom: "32px" }}>
+              <div style={{ marginTop: "2px" }}><PhoneIcon /></div>
+              <div>
+                <p
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "0.75rem",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    color: "rgba(240,240,240,0.45)",
+                    marginBottom: "4px",
+                  }}
+                >
+                  Call Us
+                </p>
+                <a
+                  href={`tel:${clubInfo.phone}`}
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "1rem",
+                    color: "white",
+                    textDecoration: "none",
+                  }}
+                >
+                  {clubInfo.phone}
+                </a>
+              </div>
+            </div>
+
             {/* Instagram */}
             <div style={{ display: "flex", alignItems: "flex-start", gap: "16px", marginBottom: "32px" }}>
               <div style={{ marginTop: "2px" }}><InstagramIcon /></div>
@@ -374,6 +421,43 @@ export default function ContactPage() {
                   }}
                 >
                   Lalitpur (Patan), Kathmandu Valley, Nepal
+                </p>
+              </div>
+            </div>
+
+            {/* Club Meetings */}
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "16px", marginBottom: "40px" }}>
+              <div style={{ marginTop: "2px" }}><ClockIcon /></div>
+              <div>
+                <p
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "0.75rem",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    color: "rgba(240,240,240,0.45)",
+                    marginBottom: "4px",
+                  }}
+                >
+                  Club Meetings
+                </p>
+                <p
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "1rem",
+                    color: "white",
+                  }}
+                >
+                  {clubInfo.meetingSchedule}
+                </p>
+                <p
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "0.9rem",
+                    color: "rgba(240,240,240,0.5)",
+                  }}
+                >
+                  {clubInfo.meetingVenue}
                 </p>
               </div>
             </div>
