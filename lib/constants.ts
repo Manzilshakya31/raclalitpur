@@ -27,12 +27,11 @@ export const navLinks = [
 ];
 
 export const partners = [
-  { name: "Partner 1", logo: "/images/partners/partner1.png", url: "#" },
-  { name: "Partner 2", logo: "/images/partners/partner2.png", url: "#" },
-  { name: "Partner 3", logo: "/images/partners/partner3.png", url: "#" },
-  { name: "Partner 4", logo: "/images/partners/partner4.png", url: "#" },
-  { name: "Partner 5", logo: "/images/partners/partner5.png", url: "#" },
-  { name: "Partner 6", logo: "/images/partners/partner6.png", url: "#" },
+  { name: "Balkumari Handicraft", logo: "/images/partners/balkumarihandicraft.png", url: "#" },
+  { name: "Prabhu Stock", logo: "/images/partners/prabhu-stock.png", url: "#" },
+  { name: "The Next Education Consultancy", logo: "/images/partners/the-next-education-consultancy.png", url: "#" },
+  { name: "Kamana Sewa Bikas Bank", logo: "/images/partners/kamana-sewa-bikas-bank.png", url: "#" },
+  { name: "Rotary Club of Lalitpur", logo: "/images/partners/rotary-club-of-lalitpur.png", url: "#" },
 ];
 
 export const projects = [
@@ -41,7 +40,7 @@ export const projects = [
     title: "Candle Walk",
     category: "Cultural Preservation",
     description:
-      "Annual cultural rally through Mongal Bazaar celebrating Lalitpur heritage. 3,000+ participants, community leaders, and media coverage.",
+      "Annual cultural rally through Mongal Bazaar celebrating Lalitpur heritage. 1,000+ participants, community leaders, and media coverage.",
     image: "/images/project/candle-walk.png",
     featured: true,
   },

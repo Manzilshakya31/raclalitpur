@@ -18,6 +18,8 @@ export interface Project {
   sdgs?: string[];
   partnerClubs?: string[];
   youtubeUrl?: string;
+  documentUrl?: string;
+  documentLabel?: string;
   objectives: string[];
   summary: string[];
   coordinators: ProjectCoordinator[];
@@ -112,6 +114,7 @@ export const projects: Project[] = [
       "Rotaract Club of Metro City",
       "Rotaract Club of Patan Heritage",
     ],
+    youtubeUrl: "https://www.youtube.com/watch?v=GKLtihhufnQ&t=213s",
     objectives: [
       "To assist people participating in Matya and make their journey more comfortable and pleasant.",
       "To help preserve and keep our cultural traditions alive through active participation.",
@@ -139,6 +142,9 @@ export const projects: Project[] = [
     volunteeringHours: 48,
     budget: "NRs. 30,000",
     displayStat: "120 Rotaractors",
+    documentUrl:
+      "https://drive.google.com/file/d/1vO6HmVxw2cU5D89HpUwiWAkN85iQwr-n/view?usp=sharing",
+    documentLabel: "Read the Full Magazine (PDF)",
     objectives: [
       "To publish and launch Lumanti Vol. 18 as a platform for knowledge sharing and club documentation.",
       "To encourage member participation in writing, coordination, and publication activities.",

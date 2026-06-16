@@ -40,10 +40,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         summary={project.summary}
         youtubeUrl={project.youtubeUrl}
         videoTitle={
-          project.slug === "candle-walk"
-            ? "Candle Walk 1146 - Rotaract Club of Lalitpur"
-            : undefined
+          project.youtubeUrl ? `${project.name} - Rotaract Club of Lalitpur` : undefined
         }
+        documentUrl={project.documentUrl}
+        documentLabel={project.documentLabel}
       />
       <ProjectGallery images={project.images} />
       <ProjectTeam coordinators={project.coordinators} />

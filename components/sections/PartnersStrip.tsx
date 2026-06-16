@@ -39,7 +39,7 @@ function PartnerSlot({ partner }: { partner: (typeof partners)[number] }) {
       alt={partner.name}
       width={100}
       height={28}
-      style={{ objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.5 }}
+      style={{ objectFit: "contain" }}
       onError={() => setError(true)}
     />
   );

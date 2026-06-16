@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Rotaract Club of Lalitpur",
   },
   description:
-    "Perceive & Excel — 27 years of service, fellowship and cultural preservation in Lalitpur. RI District 3292.",
+    "Perceive & Excel - 27 years of service, fellowship and cultural preservation in Lalitpur. RI District 3292.",
 };
 
 export default function RootLayout({

@@ -7,7 +7,7 @@ import { gsap } from "@/lib/gsap";
 const steps = [
   { number: "1", text: "Fill the Form" },
   { number: "2", text: "Attend 3 Meetings" },
-  { number: "3", text: "Pay NPR 500" },
+  { number: "3", text: "Pay membership dues" },
 ];
 
 export default function JoinCTA() {
@@ -49,23 +49,46 @@ export default function JoinCTA() {
       ref={sectionRef}
       style={{
         position: "relative",
-        background: "linear-gradient(135deg, #1a0d00 0%, #0a0a0a 50%, #0d001a 100%)",
+        background:
+          "linear-gradient(135deg, #1a0d00 0%, #0a0a0a 50%, #0d001a 100%)",
         padding: "120px 8%",
         overflow: "hidden",
         textAlign: "center",
       }}
     >
       {/* Grain overlay */}
-      <div style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }}>
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 0,
+          pointerEvents: "none",
+        }}
+      >
         <svg
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+          }}
           aria-hidden="true"
         >
           <filter id="join-grain">
-            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.65"
+              numOctaves="3"
+              stitchTiles="stitch"
+            />
             <feColorMatrix type="saturate" values="0" />
           </filter>
-          <rect width="100%" height="100%" filter="url(#join-grain)" opacity="0.03" />
+          <rect
+            width="100%"
+            height="100%"
+            filter="url(#join-grain)"
+            opacity="0.03"
+          />
         </svg>
       </div>
 
@@ -83,7 +106,6 @@ export default function JoinCTA() {
 
       {/* Content wrapper */}
       <div style={{ position: "relative", zIndex: 1 }}>
-
         {/* Label */}
         <div data-cta-main style={{ marginBottom: "24px" }}>
           <div
@@ -95,7 +117,9 @@ export default function JoinCTA() {
               marginBottom: "0",
             }}
           >
-            <div style={{ width: "40px", height: "1px", background: "#f5c842" }} />
+            <div
+              style={{ width: "40px", height: "1px", background: "#f5c842" }}
+            />
             <span
               style={{
                 fontSize: "0.75rem",
@@ -107,7 +131,9 @@ export default function JoinCTA() {
             >
               BECOME A ROTARACTOR
             </span>
-            <div style={{ width: "40px", height: "1px", background: "#f5c842" }} />
+            <div
+              style={{ width: "40px", height: "1px", background: "#f5c842" }}
+            />
           </div>
         </div>
 
@@ -140,17 +166,15 @@ export default function JoinCTA() {
             lineHeight: 1.8,
           }}
         >
-          Join 27 years of service, fellowship, and cultural pride.
-          Membership is open to anyone 18 years and above.
+          Join 27 years of service, fellowship, and cultural pride. Membership
+          is open to anyone 18 years and above.
         </p>
 
         {/* Membership steps */}
         <div className="join-steps">
           {steps.map((step, i) => (
             <Fragment key={step.text}>
-              {i > 0 && (
-                <div className="join-connector" />
-              )}
+              {i > 0 && <div className="join-connector" />}
               <div
                 data-step
                 style={{
@@ -209,8 +233,8 @@ export default function JoinCTA() {
               textDecoration: "none",
               transition: "background 0.2s ease",
             }}
-            onMouseEnter={e => (e.currentTarget.style.background = "#b3005a")}
-            onMouseLeave={e => (e.currentTarget.style.background = "#d4006a")}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "#b3005a")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "#d4006a")}
           >
             Join the Club
           </Link>
@@ -229,11 +253,11 @@ export default function JoinCTA() {
               textDecoration: "none",
               transition: "background 0.2s ease, border-color 0.2s ease",
             }}
-            onMouseEnter={e => {
+            onMouseEnter={(e) => {
               e.currentTarget.style.borderColor = "white";
               e.currentTarget.style.background = "rgba(255,255,255,0.05)";
             }}
-            onMouseLeave={e => {
+            onMouseLeave={(e) => {
               e.currentTarget.style.borderColor = "rgba(255,255,255,0.3)";
               e.currentTarget.style.background = "transparent";
             }}
@@ -241,7 +265,6 @@ export default function JoinCTA() {
             Contact Us
           </Link>
         </div>
-
       </div>
     </section>
   );

@@ -4,14 +4,27 @@ interface ProjectSummaryProps {
   summary: string[];
   youtubeUrl?: string;
   videoTitle?: string;
+  documentUrl?: string;
+  documentLabel?: string;
 }
 
 function getYouTubeEmbedUrl(youtubeUrl: string): string | null {
-  const match = youtubeUrl.match(/(?:v=|youtu\.be\/)([\w-]{11})/);
-  return match ? `https://www.youtube.com/embed/${match[1]}` : null;
+  const idMatch = youtubeUrl.match(/(?:v=|youtu\.be\/)([\w-]{11})/);
+  if (!idMatch) return null;
+
+  const timeMatch = youtubeUrl.match(/[?&]t=(\d+)s?/);
+  const start = timeMatch ? `?start=${timeMatch[1]}` : "";
+
+  return `https://www.youtube.com/embed/${idMatch[1]}${start}`;
 }
 
-export default function ProjectSummary({ summary, youtubeUrl, videoTitle }: ProjectSummaryProps) {
+export default function ProjectSummary({
+  summary,
+  youtubeUrl,
+  videoTitle,
+  documentUrl,
+  documentLabel,
+}: ProjectSummaryProps) {
   if (summary.length === 0) return null;
 
   const embedUrl = youtubeUrl ? getYouTubeEmbedUrl(youtubeUrl) : null;
@@ -34,6 +47,30 @@ export default function ProjectSummary({ summary, youtubeUrl, videoTitle }: Proj
             </p>
           ))}
         </div>
+
+        {documentUrl && (
+          <a
+            href={documentUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              marginTop: "32px",
+              border: "1px solid #f5c842",
+              color: "#f5c842",
+              padding: "14px 28px",
+              fontFamily: "var(--font-body)",
+              fontSize: "0.85rem",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              textDecoration: "none",
+            }}
+          >
+            {documentLabel ?? "View Document (PDF)"} →
+          </a>
+        )}
 
         {embedUrl && (
           <div

@@ -12,8 +12,14 @@ export const metadata: Metadata = {
 function HeartIcon() {
   return (
     <svg
-      width="40" height="40" viewBox="0 0 24 24" fill="none"
-      stroke="#f5c842" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#f5c842"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       aria-hidden="true"
     >
       <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -24,8 +30,14 @@ function HeartIcon() {
 function TempleIcon() {
   return (
     <svg
-      width="40" height="40" viewBox="0 0 24 24" fill="none"
-      stroke="#f5c842" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#f5c842"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       aria-hidden="true"
     >
       <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -37,8 +49,14 @@ function TempleIcon() {
 function UsersIcon() {
   return (
     <svg
-      width="40" height="40" viewBox="0 0 24 24" fill="none"
-      stroke="#f5c842" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#f5c842"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       aria-hidden="true"
     >
       <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -56,7 +74,7 @@ const milestones = [
     year: "1998",
     title: "Club Chartered",
     description:
-      "December 28, 1998. Rotaract Club of Lalitpur officially chartered under RI District 3292.",
+      "December 28, 1998. Rotaract Club of Lalitpur officially chartered under RI District 3292, Zone XII.",
   },
   {
     year: "2000s",
@@ -100,13 +118,18 @@ const values = [
 ];
 
 const boardMembers = [
-  { name: "Rtr. Aakriti Simkhada", role: "President",                initials: "AS" },
-  { name: "Rtr. Manjil Shakya",    role: "Immediate Past President", initials: "MS" },
-  { name: "[VP Name]",         role: "Vice President",     initials: "VP" },
-  { name: "[Secretary Name]",  role: "Secretary",          initials: "SN" },
-  { name: "[Treasurer Name]",  role: "Treasurer",          initials: "TN" },
-  { name: "[SAA Name]",        role: "Sergeant at Arms",   initials: "SA" },
-  { name: "[Director Name]",   role: "Director of Service", initials: "DS" },
+  { name: "Rtr. Aakriti Simkhada", role: "President", initials: "AS" },
+  {
+    name: "Rtr. Manjil Shakya",
+    role: "Immediate Past President",
+    initials: "MS",
+    profileUrl: "https://www.instagram.com/manzil_shakya/",
+  },
+  { name: "[VP Name]", role: "Vice President", initials: "VP" },
+  { name: "[Secretary Name]", role: "Secretary", initials: "SN" },
+  { name: "[Treasurer Name]", role: "Treasurer", initials: "TN" },
+  { name: "[SAA Name]", role: "Sergeant at Arms", initials: "SA" },
+  { name: "[Director Name]", role: "Director of Service", initials: "DS" },
 ];
 
 const pastPresidentNames: Record<number, string> = {
@@ -117,7 +140,7 @@ const pastPresidentNames: Record<number, string> = {
 
 const pastPresidents = Array.from(
   { length: 25 },
-  (_, i) => pastPresidentNames[i + 1] ?? `President ${i + 1}`
+  (_, i) => pastPresidentNames[i + 1] ?? `President ${i + 1}`,
 );
 
 // ── Page ───────────────────────────────────────────────────────────────────
@@ -148,11 +171,23 @@ export default function AboutPage() {
           aria-hidden="true"
         />
         <div
-          style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.35)", pointerEvents: "none" }}
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "rgba(0,0,0,0.35)",
+            pointerEvents: "none",
+          }}
           aria-hidden="true"
         />
 
-        <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 24px" }}>
+        <div
+          style={{
+            position: "relative",
+            zIndex: 1,
+            textAlign: "center",
+            padding: "0 24px",
+          }}
+        >
           <div
             style={{
               display: "flex",
@@ -162,7 +197,14 @@ export default function AboutPage() {
               marginBottom: "20px",
             }}
           >
-            <span style={{ display: "block", height: "1px", width: "32px", background: "#f5c842" }} />
+            <span
+              style={{
+                display: "block",
+                height: "1px",
+                width: "32px",
+                background: "#f5c842",
+              }}
+            />
             <span
               style={{
                 fontSize: "0.75rem",
@@ -174,7 +216,14 @@ export default function AboutPage() {
             >
               OUR STORY
             </span>
-            <span style={{ display: "block", height: "1px", width: "32px", background: "#f5c842" }} />
+            <span
+              style={{
+                display: "block",
+                height: "1px",
+                width: "32px",
+                background: "#f5c842",
+              }}
+            />
           </div>
 
           <h1
@@ -223,7 +272,14 @@ export default function AboutPage() {
         <div className="origin-grid">
           {/* Left — narrative text */}
           <ScrollReveal direction="left" duration={0.9}>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "28px" }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "12px",
+                marginBottom: "28px",
+              }}
+            >
               <span
                 style={{
                   display: "block",
@@ -268,10 +324,11 @@ export default function AboutPage() {
                 marginBottom: "20px",
               }}
             >
-              The Rotaract Club of Lalitpur was chartered on December 28, 1998 under
-              Rotary International District 3292. For over 27 years, we have been a home
-              for young leaders committed to service, fellowship, and the preservation of
-              Lalitpur&apos;s rich cultural heritage.
+              The Rotaract Club of Lalitpur was chartered on December 28, 1998
+              under Rotary International District 3292, Zone XII. For over 27
+              years, we have been a home for young leaders committed to service,
+              fellowship, and the preservation of Lalitpur&apos;s rich cultural
+              heritage.
             </p>
 
             <p
@@ -282,8 +339,8 @@ export default function AboutPage() {
                 lineHeight: 1.8,
               }}
             >
-              From our signature Candle Walk through Mongal Bazaar to health camps and
-              community outreach, every project reflects our motto:{" "}
+              From our signature Candle Walk through Mongal Bazaar to health
+              camps and community outreach, every project reflects our motto:{" "}
               <em
                 style={{
                   color: "rgba(245,200,66,0.85)",
@@ -386,7 +443,9 @@ export default function AboutPage() {
                 marginBottom: "16px",
               }}
             >
-              <div style={{ width: "40px", height: "1px", background: "#f5c842" }} />
+              <div
+                style={{ width: "40px", height: "1px", background: "#f5c842" }}
+              />
               <span
                 style={{
                   fontSize: "0.75rem",
@@ -398,7 +457,9 @@ export default function AboutPage() {
               >
                 OUR VALUES
               </span>
-              <div style={{ width: "40px", height: "1px", background: "#f5c842" }} />
+              <div
+                style={{ width: "40px", height: "1px", background: "#f5c842" }}
+              />
             </div>
             <h2
               style={{
@@ -473,6 +534,14 @@ export default function AboutPage() {
 
       {/* ── SECTION 4 — CURRENT BOARD ─────────────────────────────── */}
       <section style={{ background: "#0a0a0a", padding: "96px 8%" }}>
+        <style>{`
+          .board-card { transition: border-color 0.25s ease, transform 0.25s ease; }
+          a.board-card:hover {
+            border-color: rgba(245,200,66,0.3) !important;
+            transform: translateY(-2px);
+          }
+        `}</style>
+
         <ScrollReveal>
           <div style={{ textAlign: "center", marginBottom: "64px" }}>
             <div
@@ -484,7 +553,9 @@ export default function AboutPage() {
                 marginBottom: "16px",
               }}
             >
-              <div style={{ width: "40px", height: "1px", background: "#f5c842" }} />
+              <div
+                style={{ width: "40px", height: "1px", background: "#f5c842" }}
+              />
               <span
                 style={{
                   fontSize: "0.75rem",
@@ -496,7 +567,9 @@ export default function AboutPage() {
               >
                 LEADERSHIP
               </span>
-              <div style={{ width: "40px", height: "1px", background: "#f5c842" }} />
+              <div
+                style={{ width: "40px", height: "1px", background: "#f5c842" }}
+              />
             </div>
             <h2
               style={{
@@ -507,7 +580,7 @@ export default function AboutPage() {
                 lineHeight: 1.1,
               }}
             >
-              Current Board RY 2024–25
+              Current Board RY 2026–27
             </h2>
           </div>
         </ScrollReveal>
@@ -521,18 +594,20 @@ export default function AboutPage() {
             margin: "0 auto",
           }}
         >
-          {boardMembers.map((member, i) => (
-            <ScrollReveal key={member.role} delay={i * 0.07} direction="up">
-              <div
-                style={{
-                  background: "rgba(255,255,255,0.02)",
-                  border: "1px solid rgba(255,255,255,0.06)",
-                  borderRadius: "12px",
-                  padding: "32px 24px",
-                  textAlign: "center",
-                  height: "100%",
-                }}
-              >
+          {boardMembers.map((member, i) => {
+            const cardStyle: React.CSSProperties = {
+              display: "block",
+              background: "rgba(255,255,255,0.02)",
+              border: "1px solid rgba(255,255,255,0.06)",
+              borderRadius: "12px",
+              padding: "32px 24px",
+              textAlign: "center",
+              height: "100%",
+              textDecoration: "none",
+            };
+
+            const cardContent = (
+              <>
                 <div
                   style={{
                     width: "64px",
@@ -580,9 +655,29 @@ export default function AboutPage() {
                 >
                   {member.role}
                 </p>
-              </div>
-            </ScrollReveal>
-          ))}
+              </>
+            );
+
+            return (
+              <ScrollReveal key={member.role} delay={i * 0.07} direction="up">
+                {member.profileUrl ? (
+                  <a
+                    href={member.profileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="board-card"
+                    style={cardStyle}
+                  >
+                    {cardContent}
+                  </a>
+                ) : (
+                  <div className="board-card" style={cardStyle}>
+                    {cardContent}
+                  </div>
+                )}
+              </ScrollReveal>
+            );
+          })}
         </div>
       </section>
 
@@ -599,7 +694,9 @@ export default function AboutPage() {
                 marginBottom: "16px",
               }}
             >
-              <div style={{ width: "40px", height: "1px", background: "#f5c842" }} />
+              <div
+                style={{ width: "40px", height: "1px", background: "#f5c842" }}
+              />
               <span
                 style={{
                   fontSize: "0.75rem",
@@ -611,7 +708,9 @@ export default function AboutPage() {
               >
                 OUR LEGACY
               </span>
-              <div style={{ width: "40px", height: "1px", background: "#f5c842" }} />
+              <div
+                style={{ width: "40px", height: "1px", background: "#f5c842" }}
+              />
             </div>
             <h2
               style={{
@@ -672,7 +771,8 @@ export default function AboutPage() {
       {/* ── SECTION 6 — BOTTOM CTA ────────────────────────────────── */}
       <section
         style={{
-          background: "linear-gradient(135deg, #1a0d00 0%, #0a0a0a 50%, #0d001a 100%)",
+          background:
+            "linear-gradient(135deg, #1a0d00 0%, #0a0a0a 50%, #0d001a 100%)",
           padding: "100px 8%",
           textAlign: "center",
         }}
@@ -687,7 +787,9 @@ export default function AboutPage() {
               marginBottom: "24px",
             }}
           >
-            <div style={{ width: "40px", height: "1px", background: "#f5c842" }} />
+            <div
+              style={{ width: "40px", height: "1px", background: "#f5c842" }}
+            />
             <span
               style={{
                 fontSize: "0.75rem",
@@ -699,7 +801,9 @@ export default function AboutPage() {
             >
               JOIN THE CLUB
             </span>
-            <div style={{ width: "40px", height: "1px", background: "#f5c842" }} />
+            <div
+              style={{ width: "40px", height: "1px", background: "#f5c842" }}
+            />
           </div>
 
           <h2
@@ -754,7 +858,13 @@ export default function AboutPage() {
               }}
             >
               Join the Club
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                aria-hidden="true"
+              >
                 <path
                   d="M3 7h8M7.5 3.5L11 7l-3.5 3.5"
                   stroke="currentColor"

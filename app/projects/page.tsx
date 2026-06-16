@@ -20,7 +20,7 @@ const projectMeta: Record<
   "candle-walk": {
     gradient: "linear-gradient(135deg, #1a0a00, #3d1f00)",
     facts: [
-      { label: "Participants", value: "3,000+" },
+      { label: "Participants", value: "1,000+" },
       { label: "Frequency",    value: "Annual"  },
       { label: "Running Since", value: "2000s"  },
     ],

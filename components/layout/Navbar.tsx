@@ -136,7 +136,7 @@ export default function Navbar() {
             >
               <Link
                 href={link.href}
-                className="font-display text-4xl font-light tracking-wide hover:text-primary transition-colors"
+                className="font-display text-2xl font-light tracking-wide hover:text-primary transition-colors"
               >
                 {link.label}
               </Link>
