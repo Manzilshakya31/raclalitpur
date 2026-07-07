@@ -5,7 +5,7 @@ import PastPresidentsGrid from "@/components/sections/PastPresidentsGrid";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "About — Rotaract Club of Lalitpur",
+  title: "About - Rotaract Club of Lalitpur",
 };
 
 // ── Icons ──────────────────────────────────────────────────────────────────
@@ -146,19 +146,19 @@ const boardMembers = [
     initials: "RB",
   },
   { name: "Rtr. Jessica Rai", role: "Sergeant at Arms", initials: "JR" },
-  { name: "Rtr. Prashamshya M. Karmacharya", role: "", initials: "PMK" },
-  { name: "Rtr. Shubhasika Tamrakar", role: "", initials: "ST" },
+  { name: "Rtr. Swostika Rai", role: "Public Image Chair", initials: "SR" },
 ];
 
 const generalMembers = [
   "Suzal Tamrakar",
   "Manya Rajkarnikar",
   "Sandip Rai",
-  "Swostika Rai",
   "Pragalv Raj Shakya",
   "Bhaskar Pant",
   "Ezna Barahi",
   "Sargah Maharjan",
+  "Rtr. Prashamshya M. Karmacharya",
+  "Rtr. Shubhasika Tamrakar",
 ];
 
 const availablePastPresidentImages = [
