@@ -12,6 +12,24 @@ function InstagramIcon() {
   );
 }
 
+
+function TikTokIcon() {
+  return (
+    <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M14 3v12.2a4.2 4.2 0 1 1-4.2-4.2" />
+      <path d="M14 6.2c1.3 2.4 3.1 3.8 5.5 4.1" />
+    </svg>
+  );
+}
+
+function YouTubeIcon() {
+  return (
+    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3" y="6" width="18" height="12" rx="4" />
+      <path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
 function FacebookIcon() {
   return (
     <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -93,6 +111,25 @@ export default function Footer() {
             >
               <InstagramIcon />
             </a>
+            <a
+              href={clubInfo.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              className="text-[var(--color-text-muted)] hover:text-primary transition-colors duration-200"
+            >
+              <TikTokIcon />
+            </a>
+            <a
+              href={clubInfo.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="text-[var(--color-text-muted)] hover:text-primary transition-colors duration-200"
+            >
+              <YouTubeIcon />
+            </a>
+
             <a
               href={clubInfo.facebook}
               target="_blank"

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { UserRound } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./PastPresidentsGrid.module.css";
 
 type PastPresident = {
@@ -69,13 +69,39 @@ function PresidentAvatar({ name, image }: PastPresident) {
 }
 
 export default function PastPresidentsGrid({ presidents }: PastPresidentsGridProps) {
+  const gridRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.01 },
+    );
+
+    observer.observe(grid);
+    const fallback = window.setTimeout(() => setIsVisible(true), 450);
+
+    return () => {
+      window.clearTimeout(fallback);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <motion.div
+      ref={gridRef}
       className={styles.grid}
       variants={containerVariants}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      animate={isVisible ? "visible" : "hidden"}
     >
       {presidents.map((president, index) => (
         <motion.article

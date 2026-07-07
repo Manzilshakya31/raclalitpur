@@ -11,6 +11,8 @@ export const clubInfo = {
   phone: "+977-9818706474",
   instagram: "https://instagram.com/raclalitpur",
   facebook: "https://www.facebook.com/profile.php?id=61553319271054",
+  tiktok: "https://www.tiktok.com/@rac_lalitpur",
+  youtube: "https://www.youtube.com/@RotaractClubofLalitpur01",
   membershipFee: "NPR 500",
   ageRange: "18+ Years",
   meetingSchedule: "Every alternate Saturday",

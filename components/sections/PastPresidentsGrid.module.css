@@ -1,7 +1,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 2rem;
+  gap: 1rem;
   max-width: 1180px;
   margin: 0 auto;
 }
@@ -9,16 +9,16 @@
 .card {
   position: relative;
   isolation: isolate;
-  min-height: 218px;
+  min-height: 176px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.25rem;
-  padding: 2rem 1.25rem 1.65rem;
+  gap: 0.9rem;
+  padding: 1.45rem 0.9rem 1.25rem;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1.5rem;
+  border-radius: 1.25rem;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
     rgba(16, 16, 16, 0.72);
@@ -57,17 +57,20 @@
   opacity: 1;
 }
 
-.avatarShell {
+.avatarShell,
+.avatarImage,
+.avatarPlaceholder {
   width: 64px;
   height: 64px;
+}
+
+.avatarShell {
   flex: 0 0 auto;
   border-radius: 999px;
 }
 
 .avatarImage,
 .avatarPlaceholder {
-  width: 64px;
-  height: 64px;
   border: 3px solid rgba(255, 255, 255, 0.92);
   border-radius: 999px;
   box-shadow:
@@ -103,7 +106,7 @@
 
 .content {
   display: flex;
-  min-height: 54px;
+  min-height: 48px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -114,7 +117,7 @@
   max-width: 100%;
   color: #ffffff;
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   font-weight: 400;
   line-height: 1.22;
   overflow-wrap: anywhere;
@@ -128,15 +131,23 @@
   text-transform: uppercase;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 390px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    min-height: 204px;
+    gap: 1.05rem;
+    padding: 1.75rem 1.1rem 1.45rem;
+    border-radius: 1.5rem;
   }
 
   .avatarShell,
@@ -145,11 +156,22 @@
     width: 72px;
     height: 72px;
   }
+
+  .name {
+    font-size: 1.02rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
   }
 
   .card {

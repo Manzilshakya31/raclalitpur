@@ -38,6 +38,24 @@ function FacebookIcon() {
   );
 }
 
+
+function TikTokIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5c842" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
+      <path d="M14 3v12.2a4.2 4.2 0 1 1-4.2-4.2" />
+      <path d="M14 6.2c1.3 2.4 3.1 3.8 5.5 4.1" />
+    </svg>
+  );
+}
+
+function YouTubeIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5c842" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
+      <rect x="3" y="6" width="18" height="12" rx="4" />
+      <path d="m10 9.5 5 2.5-5 2.5z" fill="#f5c842" stroke="none" />
+    </svg>
+  );
+}
 function LocationIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5c842" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ flexShrink: 0 }}>
@@ -159,7 +177,7 @@ const pageStyles = `
 export default function ContactPage() {
   return (
     <>
-      <style>{pageStyles}</style>
+      <style dangerouslySetInnerHTML={{ __html: pageStyles }} suppressHydrationWarning />
 
       {/* ── SECTION 1 — HERO ──────────────────────────────────────── */}
       <section
@@ -398,6 +416,70 @@ export default function ContactPage() {
               </div>
             </div>
 
+
+            {/* TikTok */}
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "16px", marginBottom: "32px" }}>
+              <div style={{ marginTop: "2px" }}><TikTokIcon /></div>
+              <div>
+                <p
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "0.75rem",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    color: "rgba(240,240,240,0.45)",
+                    marginBottom: "4px",
+                  }}
+                >
+                  TikTok
+                </p>
+                <a
+                  href={clubInfo.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "1rem",
+                    color: "white",
+                    textDecoration: "none",
+                  }}
+                >
+                  @rac_lalitpur
+                </a>
+              </div>
+            </div>
+
+            {/* YouTube */}
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "16px", marginBottom: "32px" }}>
+              <div style={{ marginTop: "2px" }}><YouTubeIcon /></div>
+              <div>
+                <p
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "0.75rem",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    color: "rgba(240,240,240,0.45)",
+                    marginBottom: "4px",
+                  }}
+                >
+                  YouTube
+                </p>
+                <a
+                  href={clubInfo.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: "1rem",
+                    color: "white",
+                    textDecoration: "none",
+                  }}
+                >
+                  Rotaract Club of Lalitpur
+                </a>
+              </div>
+            </div>
             {/* Location */}
             <div style={{ display: "flex", alignItems: "flex-start", gap: "16px", marginBottom: "40px" }}>
               <div style={{ marginTop: "2px" }}><LocationIcon /></div>
