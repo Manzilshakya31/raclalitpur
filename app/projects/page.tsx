@@ -5,7 +5,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { projects } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Projects — Rotaract Club of Lalitpur",
+  title: "Projects - Rotaract Club of Lalitpur",
 };
 
 // ── Per-project data ────────────────────────────────────────────────────────
@@ -21,47 +21,47 @@ const projectMeta: Record<
     gradient: "linear-gradient(135deg, #1a0a00, #3d1f00)",
     facts: [
       { label: "Participants", value: "1,000+" },
-      { label: "Frequency",    value: "Annual"  },
-      { label: "Running Since", value: "2000s"  },
+      { label: "Frequency", value: "Annual" },
+      { label: "Running Since", value: "2000s" },
     ],
   },
   "nyano-maya": {
     gradient: "linear-gradient(135deg, #0a001a, #1f003d)",
     facts: [
-      { label: "Reach",     value: "Community"   },
-      { label: "Frequency", value: "Annual"      },
-      { label: "Level",     value: "District"    },
+      { label: "Reach", value: "Community" },
+      { label: "Frequency", value: "Annual" },
+      { label: "Level", value: "District" },
     ],
   },
   "lumanti-magazine": {
     gradient: "linear-gradient(135deg, #001a0a, #003d1f)",
     facts: [
-      { label: "Type",      value: "Publication" },
-      { label: "Edition",   value: "Annual"      },
-      { label: "Since",     value: "Charter"     },
+      { label: "Type", value: "Publication" },
+      { label: "Edition", value: "Annual" },
+      { label: "Since", value: "Charter" },
     ],
   },
   "matya-health-camp": {
     gradient: "linear-gradient(135deg, #0a0a1a, #1f1f3d)",
     facts: [
-      { label: "Service",   value: "Health Camp" },
-      { label: "Cost",      value: "Free"        },
-      { label: "Frequency", value: "Annual"      },
+      { label: "Service", value: "Health Camp" },
+      { label: "Cost", value: "Free" },
+      { label: "Frequency", value: "Annual" },
     ],
   },
 };
 
 const otherProjects = [
-  { title: "Blood Donation Campaign",  category: "Health"               },
-  { title: "Coffee Gig",               category: "Fellowship"           },
-  { title: "Cultural Exchange",        category: "Culture"              },
-  { title: "DLTS",                     category: "Leadership"           },
-  { title: "DRC Visit",               category: "Fellowship"           },
-  { title: "Circle of Growth",        category: "Personal Development" },
-  { title: "Online Awareness Sessions", category: "Awareness"          },
-  { title: "Charter Day Celebration", category: "Club Tradition"       },
-  { title: "Joint Meetings",          category: "Fellowship"           },
-  { title: "Sounds of Valley",        category: "Culture"              },
+  { title: "Blood Donation Campaign", category: "Health" },
+  { title: "Coffee Gig", category: "Fellowship" },
+  { title: "Cultural Exchange", category: "Culture" },
+  { title: "DLTS", category: "Leadership" },
+  { title: "DRC Visit", category: "Fellowship" },
+  { title: "Circle of Growth", category: "Personal Development" },
+  { title: "Online Awareness Sessions", category: "Awareness" },
+  { title: "Charter Day Celebration", category: "Club Tradition" },
+  { title: "Joint Meetings", category: "Fellowship" },
+  { title: "Sounds of Valley", category: "Culture" },
 ];
 
 // ── Shared styles injected once ─────────────────────────────────────────────
@@ -150,11 +150,23 @@ export default function ProjectsPage() {
           aria-hidden="true"
         />
         <div
-          style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.35)", pointerEvents: "none" }}
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "rgba(0,0,0,0.35)",
+            pointerEvents: "none",
+          }}
           aria-hidden="true"
         />
 
-        <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 24px" }}>
+        <div
+          style={{
+            position: "relative",
+            zIndex: 1,
+            textAlign: "center",
+            padding: "0 24px",
+          }}
+        >
           <div
             style={{
               display: "flex",
@@ -164,7 +176,14 @@ export default function ProjectsPage() {
               marginBottom: "20px",
             }}
           >
-            <span style={{ display: "block", height: "1px", width: "32px", background: "#f5c842" }} />
+            <span
+              style={{
+                display: "block",
+                height: "1px",
+                width: "32px",
+                background: "#f5c842",
+              }}
+            />
             <span
               style={{
                 fontSize: "0.75rem",
@@ -176,7 +195,14 @@ export default function ProjectsPage() {
             >
               OUR WORK
             </span>
-            <span style={{ display: "block", height: "1px", width: "32px", background: "#f5c842" }} />
+            <span
+              style={{
+                display: "block",
+                height: "1px",
+                width: "32px",
+                background: "#f5c842",
+              }}
+            />
           </div>
 
           <h1
@@ -201,7 +227,7 @@ export default function ProjectsPage() {
               margin: "0 auto",
             }}
           >
-            From cultural preservation to community health — 27 years of impact
+            From cultural preservation to community health - 27 years of impact
           </p>
         </div>
       </section>
@@ -218,7 +244,14 @@ export default function ProjectsPage() {
                 marginBottom: "16px",
               }}
             >
-              <div style={{ width: "40px", height: "1px", background: "#f5c842", flexShrink: 0 }} />
+              <div
+                style={{
+                  width: "40px",
+                  height: "1px",
+                  background: "#f5c842",
+                  flexShrink: 0,
+                }}
+              />
               <span
                 style={{
                   fontSize: "0.75rem",
@@ -266,7 +299,10 @@ export default function ProjectsPage() {
                   </div>
 
                   {/* Content panel */}
-                  <div className="feature-card-content" style={{ background: "#111111" }}>
+                  <div
+                    className="feature-card-content"
+                    style={{ background: "#111111" }}
+                  >
                     {/* Category badge */}
                     <span
                       style={{
@@ -397,7 +433,14 @@ export default function ProjectsPage() {
                 marginBottom: "16px",
               }}
             >
-              <div style={{ width: "40px", height: "1px", background: "#f5c842", flexShrink: 0 }} />
+              <div
+                style={{
+                  width: "40px",
+                  height: "1px",
+                  background: "#f5c842",
+                  flexShrink: 0,
+                }}
+              />
               <span
                 style={{
                   fontSize: "0.75rem",

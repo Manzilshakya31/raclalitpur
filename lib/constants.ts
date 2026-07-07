@@ -7,7 +7,7 @@ export const clubInfo = {
   pastPresidents: 25,
   district: "RI District 3292",
   motto: "Perceive & Excel",
-  email: "lallitpur@rotract3292.org",
+  email: "lalitpur@rotaract3292.org",
   phone: "+977-9818706474",
   instagram: "https://instagram.com/raclalitpur",
   facebook: "https://www.facebook.com/profile.php?id=61553319271054",

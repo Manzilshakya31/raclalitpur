@@ -1,0 +1,176 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  isolation: isolate;
+  min-height: 218px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 2rem 1.25rem 1.65rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+    rgba(16, 16, 16, 0.72);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+  text-align: center;
+  backdrop-filter: blur(18px);
+  transition:
+    transform 300ms ease-out,
+    border-color 300ms ease-out,
+    box-shadow 300ms ease-out,
+    background 300ms ease-out;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 0%, rgba(245, 200, 66, 0.13), transparent 42%);
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(245, 200, 66, 0.62);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.035)),
+    rgba(18, 18, 18, 0.82);
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.46),
+    0 0 34px rgba(245, 200, 66, 0.12);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.avatarShell {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+}
+
+.avatarImage,
+.avatarPlaceholder {
+  width: 64px;
+  height: 64px;
+  border: 3px solid rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.36),
+    0 0 0 1px rgba(245, 200, 66, 0.18);
+  transition:
+    transform 300ms ease-out,
+    box-shadow 300ms ease-out;
+}
+
+.avatarImage {
+  display: block;
+  object-fit: cover;
+}
+
+.avatarPlaceholder {
+  display: grid;
+  place-items: center;
+  color: rgba(245, 200, 66, 0.92);
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.18), transparent 34%),
+    linear-gradient(145deg, rgba(245, 200, 66, 0.22), rgba(255, 255, 255, 0.055));
+}
+
+.card:hover .avatarImage,
+.card:hover .avatarPlaceholder {
+  transform: scale(1.08);
+  box-shadow:
+    0 18px 36px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(245, 200, 66, 0.34),
+    0 0 26px rgba(245, 200, 66, 0.18);
+}
+
+.content {
+  display: flex;
+  min-height: 54px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.name {
+  max-width: 100%;
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.22;
+  overflow-wrap: anywhere;
+}
+
+.year {
+  color: rgba(245, 200, 66, 0.72);
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .avatarShell,
+  .avatarImage,
+  .avatarPlaceholder {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .card {
+    min-height: 236px;
+    padding-top: 2.15rem;
+  }
+
+  .avatarShell,
+  .avatarImage,
+  .avatarPlaceholder {
+    width: 90px;
+    height: 90px;
+  }
+
+  .name {
+    font-size: 1.08rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

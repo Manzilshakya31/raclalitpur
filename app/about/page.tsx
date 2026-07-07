@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import PastPresidentsGrid from "@/components/sections/PastPresidentsGrid";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
@@ -160,39 +161,128 @@ const generalMembers = [
   "Sargah Maharjan",
 ];
 
-const pastPresidentNames: Record<number, string> = {
-  1: "Sanju Shakya",
-  2: "Gopal K. Shrestha",
-  3: "Govinda Awale",
-  4: "Rajesh Bajracharya",
-  5: "Sanju Shakya",
-  6: "Gajanana Dakhwa",
-  7: "Biseshwor Man Shrestha",
-  8: "Sajesh Tamrakar",
-  9: "Nitisha Tamrakar",
-  10: "Sugen Shakya",
-  11: "Rujan Bajracharya",
-  12: "Prakash R. Bajracharya",
-  13: "Roshan Bajracharya",
-  14: "Jitendra Bajracharya",
-  15: "Alisha Shakya",
-  16: "Bijay Benjankar",
-  17: "Prabin Maharjan",
-  18: "Sanjal Byanjankar",
-  19: "Rashik Shakya",
-  20: "Priyanka Shakya",
-  21: "Sama Shrestha",
-  22: "Nischal Tamrakar",
-  23: "Rubin Bajracharya",
-  24: "Pranil Shakya",
-  25: "Shovana Shakya",
-  26: "Manjil Shakya",
+const availablePastPresidentImages = [
+  "/images/pastpresident/Alisha.jpg",
+  "/images/pastpresident/Jitendra.jpg",
+  "/images/pastpresident/Prakash.png",
+  "/images/pastpresident/Priyanka.jpg",
+  "/images/pastpresident/Roshan.jpg",
+  "/images/pastpresident/Rubin.jpg",
+  "/images/pastpresident/Rujan.jpg",
+  "/images/pastpresident/Sajesh.jpg",
+  "/images/pastpresident/sama.jpg",
+  "/images/pastpresident/sanjal.jpg",
+  "/images/pastpresident/sanju.jpg",
+  "/images/pastpresident/Shovana Shakya.jpeg",
+  "/images/pastpresident/Sugen.JPG",
+  "/images/pastpresident/Rajesh.jpg",
+  "/images/pastpresident/Pranil-Shakya.jpg",
+  "/images/pastpresident/manjil.png",
+];
+
+const normalizePresidentKey = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/\.[a-z0-9]+$/i, "")
+    .replace(/[^a-z0-9]/g, "");
+
+const resolvePastPresidentImage = (name: string) => {
+  const normalizedName = normalizePresidentKey(name);
+  const firstName = normalizePresidentKey(name.split(" ")[0] ?? name);
+
+  return (
+    availablePastPresidentImages.find((image) => {
+      const fileName = image.split("/").pop() ?? "";
+      const normalizedImage = normalizePresidentKey(fileName);
+
+      return (
+        normalizedName.includes(normalizedImage) ||
+        normalizedImage.includes(normalizedName) ||
+        normalizedImage === firstName
+      );
+    }) ?? null
+  );
 };
 
-const pastPresidents = Array.from(
-  { length: 26 },
-  (_, i) => pastPresidentNames[i + 1] ?? `President ${i + 1}`,
-);
+const pastPresidents = [
+  { name: "Sanju Shakya", image: resolvePastPresidentImage("Sanju Shakya") },
+  {
+    name: "Gopal K. Shrestha",
+    image: resolvePastPresidentImage("Gopal K. Shrestha"),
+  },
+  { name: "Govinda Awale", image: resolvePastPresidentImage("Govinda Awale") },
+  {
+    name: "Rajesh Bajracharya",
+    image: resolvePastPresidentImage("Rajesh Bajracharya"),
+  },
+  // { name: "Sanju Shakya", image: resolvePastPresidentImage("Sanju Shakya") },
+  {
+    name: "Gajanana Dakhwa",
+    image: resolvePastPresidentImage("Gajanana Dakhwa"),
+  },
+  {
+    name: "Biseshwor Man Shrestha",
+    image: resolvePastPresidentImage("Biseshwor Man Shrestha"),
+  },
+  {
+    name: "Sajesh Tamrakar",
+    image: resolvePastPresidentImage("Sajesh Tamrakar"),
+  },
+  {
+    name: "Nitisha Tamrakar",
+    image: resolvePastPresidentImage("Nitisha Tamrakar"),
+  },
+  { name: "Sugen Shakya", image: resolvePastPresidentImage("Sugen Shakya") },
+  {
+    name: "Rujan Bajracharya",
+    image: resolvePastPresidentImage("Rujan Bajracharya"),
+  },
+  {
+    name: "Prakash R. Bajracharya",
+    image: resolvePastPresidentImage("Prakash R. Bajracharya"),
+  },
+  {
+    name: "Roshan Bajracharya",
+    image: resolvePastPresidentImage("Roshan Bajracharya"),
+  },
+  {
+    name: "Jitendra Bajracharya",
+    image: resolvePastPresidentImage("Jitendra Bajracharya"),
+  },
+  { name: "Alisha Shakya", image: resolvePastPresidentImage("Alisha Shakya") },
+  {
+    name: "Bijay Benjankar",
+    image: resolvePastPresidentImage("Bijay Benjankar"),
+  },
+  {
+    name: "Prabin Maharjan",
+    image: resolvePastPresidentImage("Prabin Maharjan"),
+  },
+  {
+    name: "Sanjal Byanjankar",
+    image: resolvePastPresidentImage("Sanjal Byanjankar"),
+  },
+  { name: "Rashik Shakya", image: resolvePastPresidentImage("Rashik Shakya") },
+  {
+    name: "Priyanka Shakya",
+    image: resolvePastPresidentImage("Priyanka Shakya"),
+  },
+  { name: "Sama Shrestha", image: resolvePastPresidentImage("Sama Shrestha") },
+  {
+    name: "Nischal Tamrakar",
+    image: resolvePastPresidentImage("Nischal Tamrakar"),
+  },
+  {
+    name: "Rubin Bajracharya",
+    image: resolvePastPresidentImage("Rubin Bajracharya"),
+  },
+  { name: "Pranil Shakya", image: resolvePastPresidentImage("Pranil Shakya") },
+  {
+    name: "Shovana Shakya",
+    image: resolvePastPresidentImage("Shovana Shakya"),
+  },
+  { name: "Manjil Shakya", image: resolvePastPresidentImage("Manjil Shakya") },
+];
 
 // ── Page ───────────────────────────────────────────────────────────────────
 
@@ -631,7 +721,7 @@ export default function AboutPage() {
                 lineHeight: 1.1,
               }}
             >
-              Current Board RY 2026–27
+              Current Board RY 2026-27
             </h2>
           </div>
         </ScrollReveal>
@@ -874,36 +964,7 @@ export default function AboutPage() {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.1}>
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "10px",
-              justifyContent: "center",
-              maxWidth: "900px",
-              margin: "0 auto",
-            }}
-          >
-            {pastPresidents.map((name, i) => (
-              <span
-                key={`${name}-${i}`}
-                style={{
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: "999px",
-                  padding: "8px 20px",
-                  fontFamily: "var(--font-body)",
-                  fontSize: "0.85rem",
-                  color: "rgba(240,240,240,0.6)",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {name}
-              </span>
-            ))}
-          </div>
-        </ScrollReveal>
+        <PastPresidentsGrid presidents={pastPresidents} />
       </section>
 
       {/* ── SECTION 7 — BOTTOM CTA ────────────────────────────────── */}
