@@ -4,7 +4,15 @@ import { clubInfo, navLinks } from "@/lib/constants";
 
 function InstagramIcon() {
   return (
-    <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" aria-hidden="true">
+    <svg
+      width="18"
+      height="18"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
       <rect x="2" y="2" width="20" height="20" rx="5" />
       <circle cx="12" cy="12" r="5" />
       <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
@@ -12,10 +20,19 @@ function InstagramIcon() {
   );
 }
 
-
 function TikTokIcon() {
   return (
-    <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+    <svg
+      width="18"
+      height="18"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
       <path d="M14 3v12.2a4.2 4.2 0 1 1-4.2-4.2" />
       <path d="M14 6.2c1.3 2.4 3.1 3.8 5.5 4.1" />
     </svg>
@@ -24,7 +41,17 @@ function TikTokIcon() {
 
 function YouTubeIcon() {
   return (
-    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+    <svg
+      width="20"
+      height="20"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
       <rect x="3" y="6" width="18" height="12" rx="4" />
       <path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor" stroke="none" />
     </svg>
@@ -32,7 +59,13 @@ function YouTubeIcon() {
 }
 function FacebookIcon() {
   return (
-    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <svg
+      width="18"
+      height="18"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
       <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34V21.9C18.34 21.12 22 17 22 12z" />
     </svg>
   );
@@ -57,10 +90,12 @@ export default function Footer() {
             />
           </Link>
           <p className="text-sm text-[var(--color-text-muted)] max-w-xs leading-relaxed">
-            {clubInfo.tagline} — serving the community of Lalitpur since{" "}
+            {clubInfo.tagline} - serving the community of Lalitpur since{" "}
             {clubInfo.chartered.split(" ")[2]}.
           </p>
-          <p className="text-xs text-[var(--color-text-muted)]">{clubInfo.district}</p>
+          <p className="text-xs text-[var(--color-text-muted)]">
+            {clubInfo.district}
+          </p>
         </div>
 
         {/* Quick links */}
@@ -147,7 +182,7 @@ export default function Footer() {
       <div className="border-t border-[var(--color-border)]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-xs text-[var(--color-text-muted)]">
-            © 2025 Rotaract Club of Lalitpur | {clubInfo.district}
+            © 2026 Rotaract Club of Lalitpur | {clubInfo.district}
           </p>
           <p className="text-xs text-[var(--color-text-muted)]">
             Chartered {clubInfo.chartered}

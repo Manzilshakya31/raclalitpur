@@ -1,3 +1,6 @@
+// Canonical production URL — update this when the club's custom domain goes live.
+export const SITE_URL = "https://raclalitpur.vercel.app";
+
 export const clubInfo = {
   name: "Rotaract Club of Lalitpur",
   tagline: "Perceive & Excel",
@@ -34,6 +37,8 @@ export const partners = [
   { name: "The Next Education Consultancy", logo: "/images/partners/the-next-education-consultancy.png", url: "#" },
   { name: "Kamana Sewa Bikas Bank", logo: "/images/partners/kamana-sewa-bikas-bank.png", url: "#" },
   { name: "Rotary Club of Lalitpur", logo: "/images/partners/rotary-club-of-lalitpur.png", url: "#" },
+  { name: "AITM", logo: "/images/partners/aitm.png", url: "#" },
+  { name: "T&B Restaurant", logo: "/images/partners/tnb.jpeg", url: "#" },
 ];
 
 export const projects = [

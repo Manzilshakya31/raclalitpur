@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Gallery — Rotaract Club of Lalitpur",
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Gallery",
+  description:
+    "Photo gallery of Rotaract Club of Lalitpur's community service projects, events, and fellowship activities in Lalitpur, Nepal.",
+  path: "/gallery",
+  keywords: ["Rotaract Lalitpur photos", "Rotaract Lalitpur events gallery"],
+});
 
 const galleryImages = [
   { src: "/images/project/candle-walk.png", caption: "Candle Walk" },

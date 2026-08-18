@@ -1,0 +1,62 @@
+.avatarShell {
+  flex: 0 0 auto;
+  border-radius: 999px;
+}
+
+.avatarImage,
+.avatarPlaceholder {
+  display: block;
+  border: 3px solid rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.36),
+    0 0 0 1px rgba(245, 200, 66, 0.18);
+  transition:
+    transform 300ms ease-out,
+    box-shadow 300ms ease-out;
+}
+
+.avatarImage {
+  object-fit: cover;
+}
+
+.avatarPlaceholder {
+  display: grid;
+  place-items: center;
+  color: rgba(245, 200, 66, 0.92);
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.18), transparent 34%),
+    linear-gradient(145deg, rgba(245, 200, 66, 0.22), rgba(255, 255, 255, 0.055));
+}
+
+.small {
+  width: 64px;
+  height: 64px;
+}
+
+.large {
+  width: 160px;
+  height: 160px;
+  border-width: 4px;
+}
+
+@media (min-width: 640px) {
+  .small {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+@media (min-width: 768px) {
+  .large {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .small {
+    width: 90px;
+    height: 90px;
+  }
+}

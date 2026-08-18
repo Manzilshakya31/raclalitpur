@@ -4,10 +4,15 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import PartnersStrip from "@/components/sections/PartnersStrip";
 import ContactForm from "@/components/sections/ContactForm";
 import { clubInfo } from "@/lib/constants";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact — Rotaract Club of Lalitpur",
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Contact Us",
+  description:
+    "Get in touch with Rotaract Club of Lalitpur. Email lalitpur@rotaract3292.org, call +977-9818706474, or join our alternate-Saturday meetings at T&B Restaurant, Balkumari, Lalitpur.",
+  path: "/contact",
+  keywords: ["contact Rotaract Lalitpur", "Rotaract Lalitpur email", "Rotaract Lalitpur phone number"],
+});
 
 // ── Icons ───────────────────────────────────────────────────────────────────
 
