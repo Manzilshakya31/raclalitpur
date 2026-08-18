@@ -1,19 +1,14 @@
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
-import { UserRound } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import MemberAvatar from "@/components/team/MemberAvatar";
+import type { Member } from "@/lib/members";
 import styles from "./PastPresidentsGrid.module.css";
 
-type PastPresident = {
-  name: string;
-  image: string | null;
-  year?: string;
-};
-
 type PastPresidentsGridProps = {
-  presidents: PastPresident[];
+  presidents: Member[];
 };
 
 const containerVariants: Variants = {
@@ -37,36 +32,6 @@ const cardVariants: Variants = {
     },
   },
 };
-
-function PresidentAvatar({ name, image }: PastPresident) {
-  const [hasImageError, setHasImageError] = useState(false);
-  const shouldShowImage = Boolean(image) && !hasImageError;
-
-  return (
-    <div className={styles.avatarShell}>
-      {shouldShowImage ? (
-        <Image
-          src={image as string}
-          alt={`${name} - Past President`}
-          width={112}
-          height={112}
-          sizes="(max-width: 639px) 64px, (max-width: 1023px) 72px, 90px"
-          className={styles.avatarImage}
-          loading="lazy"
-          onError={() => setHasImageError(true)}
-        />
-      ) : (
-        <div
-          className={styles.avatarPlaceholder}
-          aria-label={`${name} - Past President photo placeholder`}
-          role="img"
-        >
-          <UserRound size={34} strokeWidth={1.5} aria-hidden="true" />
-        </div>
-      )}
-    </div>
-  );
-}
 
 export default function PastPresidentsGrid({ presidents }: PastPresidentsGridProps) {
   const gridRef = useRef<HTMLDivElement>(null);
@@ -107,13 +72,18 @@ export default function PastPresidentsGrid({ presidents }: PastPresidentsGridPro
         <motion.article
           className={styles.card}
           variants={cardVariants}
-          key={`${president.name}-${index}`}
+          key={`${president.slug}-${index}`}
         >
-          <PresidentAvatar {...president} />
-          <div className={styles.content}>
-            <h3 className={styles.name}>{president.name}</h3>
-            {president.year ? <p className={styles.year}>{president.year}</p> : null}
-          </div>
+          <Link
+            href={`/about/team/${president.slug}`}
+            className={styles.cardLink}
+            aria-label={`View ${president.name} Profile`}
+          >
+            <MemberAvatar name={president.name} image={president.image} />
+            <div className={styles.content}>
+              <h3 className={styles.name}>{president.name}</h3>
+            </div>
+          </Link>
         </motion.article>
       ))}
     </motion.div>

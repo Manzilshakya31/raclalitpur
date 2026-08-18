@@ -3,10 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { clubInfo } from "@/lib/constants";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Join — Rotaract Club of Lalitpur",
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Join Us",
+  description:
+    "Become a Rotaract member in Lalitpur, Nepal. Open to ages 18+, NPR 500 membership fee, meetings every alternate Saturday. Grow through service, leadership, and fellowship under RI District 3292.",
+  path: "/join",
+  keywords: ["join Rotaract Lalitpur", "Rotaract membership Nepal", "how to join Rotaract Nepal", "volunteer Lalitpur"],
+});
 
 function FormIcon() {
   return (
@@ -97,7 +102,7 @@ const steps = [
     description:
       "Complete our membership interest form online. It takes less than 2 minutes.",
     icon: <FormIcon />,
-    cta: { label: "Fill the Form →", href: "https://forms.gle" },
+    cta: { label: "Fill the Form →", href: "/contact" },
   },
   {
     number: "02",
@@ -362,10 +367,8 @@ export default function JoinPage() {
                 </p>
 
                 {step.cta && (
-                  <a
+                  <Link
                     href={step.cta.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     style={{
                       fontFamily: "var(--font-body)",
                       fontSize: "0.85rem",
@@ -374,7 +377,7 @@ export default function JoinPage() {
                     }}
                   >
                     {step.cta.label}
-                  </a>
+                  </Link>
                 )}
               </div>
             </ScrollReveal>

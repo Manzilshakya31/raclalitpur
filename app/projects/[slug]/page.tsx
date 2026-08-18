@@ -8,6 +8,7 @@ import ProjectObjectives from "@/components/projects/ProjectObjectives";
 import ProjectSummary from "@/components/projects/ProjectSummary";
 import ProjectGallery from "@/components/projects/ProjectGallery";
 import ProjectTeam from "@/components/projects/ProjectTeam";
+import { buildMetadata } from "@/lib/seo";
 
 interface ProjectPageProps {
   params: { slug: string };
@@ -21,10 +22,11 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
   const project = getProjectBySlug(params.slug);
   if (!project) return {};
 
-  return {
-    title: `${project.name} — Rotaract Club of Lalitpur`,
+  return buildMetadata({
+    title: project.name,
     description: project.tagline,
-  };
+    path: `/projects/${project.slug}`,
+  });
 }
 
 export default function ProjectPage({ params }: ProjectPageProps) {

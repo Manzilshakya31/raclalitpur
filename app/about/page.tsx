@@ -3,10 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import PastPresidentsGrid from "@/components/sections/PastPresidentsGrid";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import { teamMembers } from "@/lib/members";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About - Rotaract Club of Lalitpur",
-};
+export const metadata: Metadata = buildMetadata({
+  title: "About Us",
+  description:
+    "Meet the leadership and 27-year history of Rotaract Club of Lalitpur, chartered in 1998 under RI District 3292. Discover our mission of service, fellowship, and cultural preservation in Nepal.",
+  path: "/about",
+  keywords: ["Rotaract Club of Lalitpur history", "Rotaract Lalitpur board", "past presidents Rotaract Lalitpur", "RI District 3292 leadership"],
+});
 
 // ── Icons ──────────────────────────────────────────────────────────────────
 
@@ -139,7 +145,12 @@ const boardMembers = [
     initials: "AB",
   },
   { name: "Rtr. Alwina Shakya", role: "Club Service Director", initials: "AS" },
-  { name: "Rtr. Samir Shakya", role: "Membership Director", initials: "SS" },
+  {
+    name: "Rtr. Samir Shakya",
+    role: "Membership Director",
+    initials: "SS",
+    profileUrl: "https://www.instagram.com/samir_shakya7/",
+  },
   {
     name: "Rtr. Richa Bist",
     role: "Community Service Director",
@@ -155,133 +166,14 @@ const generalMembers = [
   "Sandip Rai",
   "Pragalv Raj Shakya",
   "Bhaskar Pant",
-  "Ezna Barahi",
+  "Izna Barahi",
   "Sargah Maharjan",
-  "Rtr. Prashamshya M. Karmacharya",
-  "Rtr. Shubhasika Tamrakar",
-];
-
-const availablePastPresidentImages = [
-  "/images/pastpresident/Alisha.jpg",
-  "/images/pastpresident/Jitendra.jpg",
-  "/images/pastpresident/Prakash.png",
-  "/images/pastpresident/Priyanka.jpg",
-  "/images/pastpresident/Roshan.jpg",
-  "/images/pastpresident/Rubin.jpg",
-  "/images/pastpresident/Rujan.jpg",
-  "/images/pastpresident/Sajesh.jpg",
-  "/images/pastpresident/sama.jpg",
-  "/images/pastpresident/sanjal.jpg",
-  "/images/pastpresident/sanju.jpg",
-  "/images/pastpresident/Shovana Shakya.jpeg",
-  "/images/pastpresident/Sugen.JPG",
-  "/images/pastpresident/Rajesh.jpg",
-  "/images/pastpresident/Pranil-Shakya.jpg",
-  "/images/pastpresident/manjil.png",
-];
-
-const normalizePresidentKey = (value: string) =>
-  value
-    .toLowerCase()
-    .replace(/\.[a-z0-9]+$/i, "")
-    .replace(/[^a-z0-9]/g, "");
-
-const resolvePastPresidentImage = (name: string) => {
-  const normalizedName = normalizePresidentKey(name);
-  const firstName = normalizePresidentKey(name.split(" ")[0] ?? name);
-
-  return (
-    availablePastPresidentImages.find((image) => {
-      const fileName = image.split("/").pop() ?? "";
-      const normalizedImage = normalizePresidentKey(fileName);
-
-      return (
-        normalizedName.includes(normalizedImage) ||
-        normalizedImage.includes(normalizedName) ||
-        normalizedImage === firstName
-      );
-    }) ?? null
-  );
-};
-
-const pastPresidents = [
-  { name: "Sanju Shakya", image: resolvePastPresidentImage("Sanju Shakya") },
-  {
-    name: "Gopal K. Shrestha",
-    image: resolvePastPresidentImage("Gopal K. Shrestha"),
-  },
-  { name: "Govinda Awale", image: resolvePastPresidentImage("Govinda Awale") },
-  {
-    name: "Rajesh Bajracharya",
-    image: resolvePastPresidentImage("Rajesh Bajracharya"),
-  },
-  // { name: "Sanju Shakya", image: resolvePastPresidentImage("Sanju Shakya") },
-  {
-    name: "Gajanana Dakhwa",
-    image: resolvePastPresidentImage("Gajanana Dakhwa"),
-  },
-  {
-    name: "Biseshwor Man Shrestha",
-    image: resolvePastPresidentImage("Biseshwor Man Shrestha"),
-  },
-  {
-    name: "Sajesh Tamrakar",
-    image: resolvePastPresidentImage("Sajesh Tamrakar"),
-  },
-  {
-    name: "Nitisha Tamrakar",
-    image: resolvePastPresidentImage("Nitisha Tamrakar"),
-  },
-  { name: "Sugen Shakya", image: resolvePastPresidentImage("Sugen Shakya") },
-  {
-    name: "Rujan Bajracharya",
-    image: resolvePastPresidentImage("Rujan Bajracharya"),
-  },
-  {
-    name: "Prakash R. Bajracharya",
-    image: resolvePastPresidentImage("Prakash R. Bajracharya"),
-  },
-  {
-    name: "Roshan Bajracharya",
-    image: resolvePastPresidentImage("Roshan Bajracharya"),
-  },
-  {
-    name: "Jitendra Bajracharya",
-    image: resolvePastPresidentImage("Jitendra Bajracharya"),
-  },
-  { name: "Alisha Shakya", image: resolvePastPresidentImage("Alisha Shakya") },
-  {
-    name: "Bijay Benjankar",
-    image: resolvePastPresidentImage("Bijay Benjankar"),
-  },
-  {
-    name: "Prabin Maharjan",
-    image: resolvePastPresidentImage("Prabin Maharjan"),
-  },
-  {
-    name: "Sanjal Byanjankar",
-    image: resolvePastPresidentImage("Sanjal Byanjankar"),
-  },
-  { name: "Rashik Shakya", image: resolvePastPresidentImage("Rashik Shakya") },
-  {
-    name: "Priyanka Shakya",
-    image: resolvePastPresidentImage("Priyanka Shakya"),
-  },
-  { name: "Sama Shrestha", image: resolvePastPresidentImage("Sama Shrestha") },
-  {
-    name: "Nischal Tamrakar",
-    image: resolvePastPresidentImage("Nischal Tamrakar"),
-  },
-  {
-    name: "Rubin Bajracharya",
-    image: resolvePastPresidentImage("Rubin Bajracharya"),
-  },
-  { name: "Pranil Shakya", image: resolvePastPresidentImage("Pranil Shakya") },
-  {
-    name: "Shovana Shakya",
-    image: resolvePastPresidentImage("Shovana Shakya"),
-  },
-  { name: "Manjil Shakya", image: resolvePastPresidentImage("Manjil Shakya") },
+  "Bijeta bhandari",
+  "Prashamshya M. Karmacharya",
+  "Shubhasika Tamrakar",
+  "Aarush Razopadhyaya",
+  "Bijeta Bhandari",
+  "Tanik Maharjan",
 ];
 
 // ── Page ───────────────────────────────────────────────────────────────────
@@ -910,7 +802,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── SECTION 6 — PAST PRESIDENTS ───────────────────────────── */}
-      <section style={{ background: "#0a0a0a", padding: "80px 8%" }}>
+      <section id="team" style={{ background: "#0a0a0a", padding: "80px 8%" }}>
         <ScrollReveal>
           <div style={{ textAlign: "center", marginBottom: "48px" }}>
             <div
@@ -964,7 +856,7 @@ export default function AboutPage() {
           </div>
         </ScrollReveal>
 
-        <PastPresidentsGrid presidents={pastPresidents} />
+        <PastPresidentsGrid presidents={teamMembers} />
       </section>
 
       {/* ── SECTION 7 — BOTTOM CTA ────────────────────────────────── */}

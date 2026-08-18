@@ -1,0 +1,235 @@
+.hero {
+  position: relative;
+  padding: 140px 8% 96px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(245, 200, 66, 0.08), transparent 55%),
+    #0a0a0a;
+  overflow: hidden;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(240, 240, 240, 0.6);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 200ms ease-out;
+}
+
+.backLink:hover {
+  color: #f5c842;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 640px;
+  margin: 56px auto 0;
+}
+
+.avatarWrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin-bottom: 12px;
+}
+
+.avatarGlow {
+  position: absolute;
+  inset: -30px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(245, 200, 66, 0.22), transparent 70%);
+  filter: blur(20px);
+  z-index: -1;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.15;
+}
+
+.position {
+  display: inline-block;
+  border: 1px solid rgba(245, 200, 66, 0.4);
+  color: #f5c842;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 6px 16px;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: rgba(240, 240, 240, 0.45);
+  letter-spacing: 0.04em;
+}
+
+.journey {
+  background: #111111;
+  padding: 88px 8%;
+}
+
+.journeyInner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.kicker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.kickerLine {
+  width: 40px;
+  height: 1px;
+  background: #f5c842;
+}
+
+.kickerLabel {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #f5c842;
+  white-space: nowrap;
+}
+
+.messageBody {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.paragraph {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(240, 240, 240, 0.75);
+}
+
+.comingSoon {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(240, 240, 240, 0.5);
+  text-align: center;
+  font-style: italic;
+}
+
+.quote {
+  margin: 48px 0 0;
+  padding: 28px 32px;
+  border-left: 2px solid #f5c842;
+  background: linear-gradient(180deg, rgba(245, 200, 66, 0.06), transparent);
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.55;
+  color: #ffffff;
+}
+
+.navSection {
+  background: #0a0a0a;
+  padding: 64px 8% 96px;
+}
+
+.navRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.navLink {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none;
+  padding: 4px 0;
+  transition: transform 200ms ease-out;
+  flex: 1;
+  min-width: 0;
+}
+
+.navLink:hover {
+  transform: translateY(-2px);
+}
+
+.navLinkRight {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.navDirection {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f5c842;
+}
+
+.navName {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: rgba(240, 240, 240, 0.8);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.navSpacer {
+  flex: 1;
+}
+
+.navBack {
+  flex-shrink: 0;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(240, 240, 240, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 10px 20px;
+  text-decoration: none;
+  transition:
+    color 200ms ease-out,
+    border-color 200ms ease-out;
+}
+
+.navBack:hover {
+  color: #f5c842;
+  border-color: rgba(245, 200, 66, 0.5);
+}
+
+@media (max-width: 640px) {
+  .navRow {
+    flex-wrap: wrap;
+  }
+
+  .navLinkRight {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .navBack {
+    order: 3;
+    margin: 0 auto;
+  }
+}

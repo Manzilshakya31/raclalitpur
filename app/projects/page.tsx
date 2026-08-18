@@ -3,10 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { projects } from "@/lib/constants";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Projects - Rotaract Club of Lalitpur",
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Our Projects",
+  description:
+    "Explore signature community service projects by Rotaract Club of Lalitpur: Candle Walk, Nyano Maya, Matya Health Camp, and Lumanti Magazine — serving Lalitpur, Nepal since 1998.",
+  path: "/projects",
+  keywords: ["Candle Walk Lalitpur", "Nyano Maya Rotaract", "Matya Health Camp", "Rotaract community service projects Nepal"],
+});
 
 // ── Per-project data ────────────────────────────────────────────────────────
 
