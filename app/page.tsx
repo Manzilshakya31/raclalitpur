@@ -5,6 +5,7 @@ import SignatureProjects from "@/components/sections/SignatureProjects";
 import GalleryPeek from "@/components/sections/GalleryPeek";
 import PartnersStrip from "@/components/sections/PartnersStrip";
 import JoinCTA from "@/components/sections/JoinCTA";
+import WhatsNext from "@/components/sections/WhatsNext";
 
 const Separator = () => (
   <div style={{ height: "1px", background: "linear-gradient(to right, transparent, rgba(245,200,66,0.2), transparent)" }} />
@@ -26,6 +27,7 @@ export default function Home() {
       <PartnersStrip />
       <Separator />
       <JoinCTA />
+      <WhatsNext />
     </>
   );
 }

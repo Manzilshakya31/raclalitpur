@@ -9,7 +9,6 @@ import { navLinks, clubInfo } from "@/lib/constants";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [logoError, setLogoError] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -41,29 +40,14 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            {logoError ? (
-              <span
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "1.15rem",
-                  fontWeight: 300,
-                  color: "white",
-                  letterSpacing: "0.03em",
-                }}
-              >
-                RAC Lalitpur
-              </span>
-            ) : (
-              <Image
-                src="/images/logo.png"
-                alt="Rotaract Club of Lalitpur"
-                width={270}
-                height={78}
-                priority
-                className="h-9 md:h-11 w-auto"
-                onError={() => setLogoError(true)}
-              />
-            )}
+            <Image
+              src="/images/logo.png"
+              alt="Rotaract Club of Lalitpur"
+              width={270}
+              height={78}
+              priority
+              className="h-9 md:h-11 w-auto"
+            />
           </Link>
 
           {/* Desktop nav */}
