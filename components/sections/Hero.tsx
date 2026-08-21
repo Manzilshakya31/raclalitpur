@@ -32,11 +32,12 @@ export default function Hero() {
     >
       {/* Background video */}
       <video
-        src="/images/herosection.mp4"
+        src="/images/herobg.mp4"
         autoPlay
         muted
         loop
         playsInline
+        preload="metadata"
         aria-hidden="true"
         className="absolute inset-0 w-full h-full"
         style={{ objectFit: "cover", objectPosition: "center" }}
