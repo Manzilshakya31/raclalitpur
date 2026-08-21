@@ -32,13 +32,15 @@ export const navLinks = [
 ];
 
 export const partners = [
-  { name: "Balkumari Handicraft", logo: "/images/partners/balkumarihandicraft.png", url: "#" },
+  { name: "Balkumari Handicraft", logo: "/images/partners/balkumarihandicraft.png", url: "https://www.balkumarihandicraft.com.np/" },
   { name: "Prabhu Stock", logo: "/images/partners/prabhu-stock.png", url: "#" },
   { name: "The Next Education Consultancy", logo: "/images/partners/the-next-education-consultancy.png", url: "#" },
   { name: "Kamana Sewa Bikas Bank", logo: "/images/partners/kamana-sewa-bikas-bank.png", url: "#" },
   { name: "Rotary Club of Lalitpur", logo: "/images/partners/rotary-club-of-lalitpur.png", url: "#" },
-  { name: "AITM", logo: "/images/partners/aitm.png", url: "#" },
+  { name: "AITM", logo: "/images/partners/aitm.png", url: "https://www.aitm.edu.np/" },
   { name: "T&B Restaurant", logo: "/images/partners/tnb.jpeg", url: "#" },
+  { name: "New Millennium", logo: "/images/partners/new-millennium.png", url: "#" },
+  { name: "Purna Metals", logo: "/images/partners/purna-metals.jpeg", url: "https://www.facebook.com/purnametal/about/" },
 ];
 
 export const projects = [

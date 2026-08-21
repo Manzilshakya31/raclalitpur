@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import MemberAvatar from "@/components/team/MemberAvatar";
 import type { Member } from "@/lib/members";
 import styles from "./TeamMemberProfile.module.css";
@@ -11,8 +11,6 @@ interface TeamMemberProfileProps {
   previous: Member | null;
   next: Member | null;
 }
-
-const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 export default function TeamMemberProfile({ member, previous, next }: TeamMemberProfileProps) {
   const paragraphs = member.message
@@ -29,12 +27,7 @@ export default function TeamMemberProfile({ member, previous, next }: TeamMember
           ← Back to Team
         </Link>
 
-        <motion.div
-          className={styles.heroContent}
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: EASE }}
-        >
+        <ScrollReveal className={styles.heroContent} duration={0.7}>
           <div className={styles.avatarWrap}>
             <div className={styles.avatarGlow} aria-hidden="true" />
             <MemberAvatar name={member.name} image={member.image} size="lg" />
@@ -42,17 +35,11 @@ export default function TeamMemberProfile({ member, previous, next }: TeamMember
           <h1 className={styles.name}>{member.name}</h1>
           <p className={styles.position}>{member.position}</p>
           <p className={styles.subtitle}>Rotaractor · Rotaract Club of Lalitpur</p>
-        </motion.div>
+        </ScrollReveal>
       </section>
 
       <section className={styles.journey}>
-        <motion.div
-          className={styles.journeyInner}
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-10% 0px" }}
-          transition={{ duration: 0.6, ease: EASE }}
-        >
+        <ScrollReveal className={styles.journeyInner} duration={0.6}>
           <div className={styles.kicker}>
             <span className={styles.kickerLine} />
             <span className={styles.kickerLabel}>My Rotaract Journey</span>
@@ -75,7 +62,7 @@ export default function TeamMemberProfile({ member, previous, next }: TeamMember
           )}
 
           {member.quote && <blockquote className={styles.quote}>&ldquo;{member.quote}&rdquo;</blockquote>}
-        </motion.div>
+        </ScrollReveal>
       </section>
 
       <section className={styles.navSection}>

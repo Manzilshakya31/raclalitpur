@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-const MIN_DISPLAY_MS = 400;
-const FADE_MS = 400;
+const MIN_DISPLAY_MS = 150;
+const FADE_MS = 250;
 
 export default function Loader() {
   const [visible, setVisible] = useState(true);
