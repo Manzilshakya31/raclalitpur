@@ -53,15 +53,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: SITE_URL,
+    url: new URL("/", SITE_URL).toString(),
     siteName: clubInfo.name,
     title: `${clubInfo.name} | Perceive & Excel`,
     description: DESCRIPTION,
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: `${clubInfo.name} — Perceive & Excel`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${clubInfo.name} | Perceive & Excel`,
     description: DESCRIPTION,
+    images: ["/opengraph-image.png"],
   },
   robots: {
     index: true,
@@ -78,43 +87,57 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: clubInfo.name,
-  alternateName: "RAC Lalitpur",
-  url: SITE_URL,
-  logo: `${SITE_URL}/images/logo.png`,
-  image: `${SITE_URL}/images/logo.png`,
-  description: DESCRIPTION,
-  slogan: clubInfo.motto,
-  foundingDate: "1998-12-28",
-  email: clubInfo.email,
-  telephone: clubInfo.phone,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Lalitpur",
-    addressRegion: "Bagmati Province",
-    addressCountry: "NP",
-  },
-  areaServed: {
-    "@type": "City",
-    name: "Lalitpur",
-  },
-  memberOf: {
-    "@type": "Organization",
-    name: "Rotary International District 3292",
-  },
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "customer service",
-    email: clubInfo.email,
-    telephone: clubInfo.phone,
-    areaServed: "NP",
-  },
-  sameAs: [
-    clubInfo.facebook,
-    clubInfo.instagram,
-    clubInfo.tiktok,
-    clubInfo.youtube,
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: clubInfo.name,
+      alternateName: "RAC Lalitpur",
+      url: new URL("/", SITE_URL).toString(),
+      logo: `${SITE_URL}/images/logo.png`,
+      image: `${SITE_URL}/opengraph-image.png`,
+      description: DESCRIPTION,
+      slogan: clubInfo.motto,
+      foundingDate: "1998-12-28",
+      email: clubInfo.email,
+      telephone: clubInfo.phone,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Lalitpur",
+        addressRegion: "Bagmati Province",
+        addressCountry: "NP",
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Lalitpur",
+      },
+      memberOf: {
+        "@type": "Organization",
+        name: "Rotary International District 3292",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "general inquiries",
+        email: clubInfo.email,
+        telephone: clubInfo.phone,
+        areaServed: "NP",
+      },
+      sameAs: [
+        clubInfo.facebook,
+        clubInfo.instagram,
+        clubInfo.tiktok,
+        clubInfo.youtube,
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: new URL("/", SITE_URL).toString(),
+      name: clubInfo.name,
+      description: DESCRIPTION,
+      inLanguage: "en",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
   ],
 };
 

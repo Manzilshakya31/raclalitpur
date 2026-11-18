@@ -13,21 +13,29 @@ export function buildMetadata({
   description,
   path = "",
   keywords,
+  image,
 }: {
   title: string;
   description: string;
   path?: string;
   keywords?: string[];
+  image?: string;
 }): Metadata {
   const fullTitle = `${title} | ${clubInfo.name}`;
-  const url = `${SITE_URL}${path}`;
+  const canonicalPath = path
+    ? path.endsWith("/")
+      ? path
+      : `${path}/`
+    : "/";
+  const url = new URL(canonicalPath, SITE_URL).toString();
+  const socialImage = image ?? "/opengraph-image.png";
 
   return {
     title,
     description,
     keywords,
     alternates: {
-      canonical: path || "/",
+      canonical: canonicalPath,
     },
     openGraph: {
       title: fullTitle,
@@ -36,11 +44,13 @@ export function buildMetadata({
       siteName: clubInfo.name,
       locale: "en_US",
       type: "website",
+      images: [{ url: socialImage, alt: fullTitle }],
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
       description,
+      images: [socialImage],
     },
   };
 }
