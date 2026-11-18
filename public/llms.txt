@@ -1,29 +1,33 @@
 # Rotaract Club of Lalitpur
 
-> Rotaract Club of Lalitpur is a youth-led community service club in Lalitpur, Nepal, chartered on December 28, 1998 under Rotary International District 3292. Motto: "Perceive & Excel." The club runs community service, fellowship, and cultural preservation projects and is open to members aged 18+.
+> Rotaract Club of Lalitpur (RAC Lalitpur) is a youth-led community service club in Lalitpur, Nepal. Chartered on December 28, 1998, it is part of Rotary International District 3292. Its motto is "Perceive & Excel." The club brings young adults together for community service, leadership, fellowship, and cultural preservation.
 
 ## Key facts
 
-- Chartered: December 28, 1998 (27+ years active)
+- Chartered: December 28, 1998
 - District: Rotary International District 3292
-- Membership fee: NPR 500
-- Age range: 18+ years
+- Membership: Ages 18 and above
+- Membership fee: NPR 500 one-time
 - Meetings: Every alternate Saturday, T&B Restaurant, Balkumari, Lalitpur
 - Email: lalitpur@rotaract3292.org
 - Phone: +977-9818706474
 
 ## Pages
 
-- [Home](https://raclalitpur.vercel.app/): Overview of the club, impact, and signature projects.
-- [About](https://raclalitpur.vercel.app/about): Club history, mission, leadership, and past presidents.
-- [Projects](https://raclalitpur.vercel.app/projects): Signature service projects — Candle Walk, Nyano Maya, Matya Health Camp, Lumanti Magazine.
-- [Gallery](https://raclalitpur.vercel.app/gallery): Photos from club events and projects.
-- [Join](https://raclalitpur.vercel.app/join): How to become a member.
-- [Contact](https://raclalitpur.vercel.app/contact): Contact details and inquiry form.
+- [Home](https://www.rotaractcluboflalitpur.org.np/): Club overview, community impact, and featured initiatives.
+- [About](https://www.rotaractcluboflalitpur.org.np/about): Club history, mission, leadership, and past presidents.
+- [Projects](https://www.rotaractcluboflalitpur.org.np/projects): All community service projects.
+- [Candle Walk 1146](https://www.rotaractcluboflalitpur.org.np/projects/candle-walk): Annual Nepal Sambat cultural celebration in Lalitpur.
+- [Nyano Maya](https://www.rotaractcluboflalitpur.org.np/projects/nyano-maya): Health awareness and community support at Future Hope Nepal Children's Home.
+- [Matya Health Camp](https://www.rotaractcluboflalitpur.org.np/projects/matya-health-camp): Community health support during Lalitpur's Matya festival.
+- [Lumanti Magazine Vol. 18](https://www.rotaractcluboflalitpur.org.np/projects/lumanti-magazine): Annual club publication and launch.
+- [Gallery](https://www.rotaractcluboflalitpur.org.np/gallery): Photos from club events and projects.
+- [Join](https://www.rotaractcluboflalitpur.org.np/join): Membership eligibility, fee, meetings, and joining steps.
+- [Contact](https://www.rotaractcluboflalitpur.org.np/contact): Contact details and inquiry form.
 
 ## Social
 
-- Facebook: https://www.facebook.com/profile.php?id=61553319271054
-- Instagram: https://instagram.com/raclalitpur
-- TikTok: https://www.tiktok.com/@rac_lalitpur
-- YouTube: https://www.youtube.com/@RotaractClubofLalitpur01
+- [Facebook](https://www.facebook.com/profile.php?id=61553319271054)
+- [Instagram](https://instagram.com/raclalitpur)
+- [TikTok](https://www.tiktok.com/@rac_lalitpur)
+- [YouTube](https://www.youtube.com/@RotaractClubofLalitpur01)

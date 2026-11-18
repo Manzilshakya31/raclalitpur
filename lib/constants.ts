@@ -1,5 +1,5 @@
-// Canonical production URL — update this when the club's custom domain goes live.
-export const SITE_URL = "https://raclalitpur.vercel.app";
+// Canonical production origin used for metadata, structured data, and sitemaps.
+export const SITE_URL = "https://www.rotaractcluboflalitpur.org.np";
 
 export const clubInfo = {
   name: "Rotaract Club of Lalitpur",
@@ -38,7 +38,7 @@ export const partners = [
   { name: "Kamana Sewa Bikas Bank", logo: "/images/partners/kamana-sewa-bikas-bank.png", url: "#" },
   { name: "Rotary Club of Lalitpur", logo: "/images/partners/rotary-club-of-lalitpur.png", url: "#" },
   { name: "AITM", logo: "/images/partners/aitm.png", url: "https://www.aitm.edu.np/" },
-  { name: "T&B Restaurant", logo: "/images/partners/tnb.jpeg", url: "#" },
+  // { name: "T&B Restaurant", logo: "/images/partners/tnb.jpeg", url: "#" },
   { name: "New Millennium", logo: "/images/partners/new-millennium.png", url: "#" },
   { name: "Purna Metals", logo: "/images/partners/purna-metals.jpeg", url: "https://www.facebook.com/purnametal/about/" },
 ];

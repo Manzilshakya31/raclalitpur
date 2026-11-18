@@ -24,8 +24,9 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
 
   return buildMetadata({
     title: project.name,
-    description: project.tagline,
+    description: `${project.tagline} Learn about this ${project.category.toLowerCase()} initiative by Rotaract Club of Lalitpur in Nepal.`,
     path: `/projects/${project.slug}`,
+    image: project.images[0],
   });
 }
 
