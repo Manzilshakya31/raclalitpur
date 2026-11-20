@@ -1,5 +1,5 @@
 // Canonical production origin used for metadata, structured data, and sitemaps.
-export const SITE_URL = "https://www.rotaractcluboflalitpur.org.np";
+export const SITE_URL = "https://rotaractcluboflalitpur.org.np";
 
 export const clubInfo = {
   name: "Rotaract Club of Lalitpur",
