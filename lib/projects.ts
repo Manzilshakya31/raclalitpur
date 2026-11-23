@@ -1,3 +1,5 @@
+import { projects as listedProjects } from "@/lib/constants";
+
 export interface ProjectCoordinator {
   name: string;
   designation: string;
@@ -24,6 +26,30 @@ export interface Project {
   summary: string[];
   coordinators: ProjectCoordinator[];
   images: string[];
+}
+
+export interface ProjectPortfolioRecord {
+  name: string;
+  slug: string;
+  category: string;
+  rotaractYear: string;
+  projectType?: "recurring" | "one-time";
+  description?: string;
+  coverImage?: string;
+  galleryImages?: string[];
+  detailPath?: string;
+  eventDate?: string;
+  status?: string;
+  participants?: string;
+  collaborators?: string[];
+  impact?: string;
+  featured?: boolean;
+}
+
+export interface ProjectYearArchive {
+  year: string;
+  current: boolean;
+  projects: ProjectPortfolioRecord[];
 }
 
 export const projects: Project[] = [
@@ -155,6 +181,72 @@ export const projects: Project[] = [
     ],
     coordinators: [{ name: "Rtr. Aakriti Simkhada", designation: "Secretary" }],
     images: ["/images/project/magazine.jpg"],
+  },
+];
+
+const pastArchiveRecords: ProjectPortfolioRecord[] = [
+  ...listedProjects.map((listedProject) => {
+    const detail = projects.find((project) => project.slug === listedProject.slug);
+    return {
+      name: listedProject.title,
+      slug: listedProject.slug,
+      category: listedProject.category,
+      rotaractYear: "2025-26",
+      projectType:
+        listedProject.slug === "candle-walk" ? ("recurring" as const) : undefined,
+      description: listedProject.description,
+      coverImage: listedProject.image,
+      galleryImages: detail?.images,
+      detailPath: `/projects/${listedProject.slug}`,
+      eventDate: detail?.date,
+      status: "Completed",
+      collaborators: detail?.partnerClubs,
+      impact: detail?.displayStat,
+      featured: listedProject.slug === "candle-walk",
+    };
+  }),
+  ...[
+    { name: "Blood Donation Campaign", category: "Health" },
+    { name: "Coffee Gig", category: "Fellowship" },
+    { name: "Cultural Exchange", category: "Culture" },
+    { name: "DLTS", category: "Leadership" },
+    { name: "DRC Visit", category: "Fellowship" },
+    { name: "Circle of Growth", category: "Personal Development" },
+    { name: "Online Awareness Sessions", category: "Awareness" },
+    { name: "Charter Day Celebration", category: "Club Tradition" },
+    { name: "Joint Meetings", category: "Fellowship" },
+    { name: "Sounds of Valley", category: "Culture" },
+  ].map((item) => ({
+    ...item,
+    slug: item.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""),
+    rotaractYear: "2025-26",
+  })),
+];
+
+export const projectYears: ProjectYearArchive[] = [
+  {
+    year: "2026-27",
+    current: true,
+    projects: [
+      {
+        name: "Candle Walk 1146",
+        slug: "candle-walk-1146-2026-27",
+        category: "Cultural Preservation",
+        rotaractYear: "2026-27",
+        projectType: "recurring",
+        description:
+          "Lighting candles, preserving culture, and walking together toward unity.",
+        coverImage: "/images/project/candle-walk.png",
+        galleryImages: ["/images/project/candle-walk.png"],
+        detailPath: "/projects/candle-walk",
+        featured: true,
+      },
+    ],
+  },
+  {
+    year: "2025-26",
+    current: false,
+    projects: pastArchiveRecords,
   },
 ];
 
