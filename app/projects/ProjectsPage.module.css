@@ -1,0 +1,80 @@
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 430px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 112px 24px 64px;
+  background: #090909;
+  text-align: center;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  opacity: 0.13;
+}
+
+.heroImage img {
+  object-fit: cover;
+  object-position: center 48%;
+}
+
+.hero::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.7));
+  content: "";
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #f5c842;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  width: 30px;
+  height: 1px;
+  background: #f5c842;
+  content: "";
+}
+
+.hero h1 {
+  color: white;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.hero p {
+  max-width: 530px;
+  margin: 20px auto 0;
+  color: rgba(240, 240, 240, 0.65);
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 380px;
+    padding-top: 104px;
+  }
+}
